@@ -7,25 +7,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.LoginViewController">
    <children>
-      <Label layoutX="169.0" layoutY="82.0" prefHeight="35.0" prefWidth="263.0" text="Login To Your Account">
+      <Label layoutX="294.0" layoutY="59.0" prefHeight="35.0" prefWidth="263.0" text="Login To Your Account">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="170.0" layoutY="155.0" text="User Name :" />
-      <TextField fx:id="userNameTextField" layoutX="260.0" layoutY="151.0" promptText="Enter User Name" />
-      <Label layoutX="170.0" layoutY="192.0" text="Password :" />
-      <TextField fx:id="passwordTextField" layoutX="260.0" layoutY="188.0" promptText="Enter Password" />
-      <Label layoutX="170.0" layoutY="225.0" text="Group :" />
-      <ComboBox fx:id="groupComboBoxField" layoutX="260.0" layoutY="221.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Your Group" />
-      <Button layoutX="237.0" layoutY="298.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="35.0" prefWidth="113.0" style="-fx-background-color: #6ac5fe;" text="Log In" textAlignment="CENTER" textFill="ALICEBLUE" wrapText="true">
+      <Label layoutX="300.0" layoutY="126.0" text="User Name :" />
+      <TextField fx:id="userNameTextField" layoutX="410.0" layoutY="122.0" promptText="Enter User Name" />
+      <Label layoutX="304.0" layoutY="168.0" text="Password :" />
+      <TextField fx:id="passwordTextField" layoutX="410.0" layoutY="164.0" promptText="Enter Password" />
+      <Label layoutX="304.0" layoutY="216.0" text="Group :" />
+      <ComboBox fx:id="groupComboBoxField" layoutX="410.0" layoutY="212.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Your Group" />
+      <Button layoutX="410.0" layoutY="282.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="35.0" prefWidth="113.0" style="-fx-background-color: #6ac5fe;" text="Log In" textAlignment="CENTER" textFill="ALICEBLUE" wrapText="true">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="errorLabelingField" layoutX="168.0" layoutY="260.0" prefHeight="25.0" prefWidth="244.0" />
+      <Label fx:id="errorLabelingField" layoutX="324.0" layoutY="249.0" prefHeight="25.0" prefWidth="244.0" />
+      <AnchorPane layoutY="-1.0" prefHeight="408.0" prefWidth="263.0" style="-fx-background-color: #2F4F4F;">
+         <children>
+            <Label layoutX="10.0" layoutY="99.0" prefHeight="209.0" prefWidth="244.0" text="Simulating operations of a Trade Fair (banijjo mela)" textAlignment="CENTER" textFill="ALICEBLUE" wrapText="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
