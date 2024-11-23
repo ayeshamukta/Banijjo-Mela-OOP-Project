@@ -17,55 +17,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="459.0" prefWidth="746.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.CustomerdashboardViewController">
+<AnchorPane prefHeight="468.0" prefWidth="802.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.CustomerdashboardViewController">
    <children>
-      <Button layoutX="32.0" layoutY="63.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Shop" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="32.0" layoutY="111.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Cart" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="32.0" layoutY="157.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="To Review" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="32.0" layoutY="203.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="My Orders" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="32.0" layoutY="246.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Disscounts" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="32.0" layoutY="287.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Event Activities" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="32.0" layoutY="329.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="ASk Question" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="32.0" layoutY="401.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Log Out" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
-      <Label alignment="CENTER" layoutX="68.0" layoutY="21.0" prefHeight="18.0" prefWidth="545.0" text="Customer Dashboard">
+      <Label alignment="CENTER" layoutX="224.0" prefHeight="57.0" prefWidth="578.0" style="-fx-background-color: #2F4F4F;" text="Customer Dashboard" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TabPane layoutX="157.0" layoutY="76.0" prefHeight="366.0" prefWidth="546.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="240.0" layoutY="71.0" prefHeight="366.0" prefWidth="546.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Product">
             <content>
@@ -294,10 +253,54 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button layoutX="32.0" layoutY="365.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Wishlist" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font>
-      </Button>
+      <AnchorPane layoutY="-4.0" prefHeight="472.0" prefWidth="224.0" style="-fx-background-color: #2F4F4F;">
+         <children>
+            <Button layoutX="67.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Shop" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="131.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Cart" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="177.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="To Review" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="My Orders" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="266.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Disscounts" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="307.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Event Activities" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="349.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="ASk Question" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="421.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="67.0" layoutY="385.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Wishlist" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
