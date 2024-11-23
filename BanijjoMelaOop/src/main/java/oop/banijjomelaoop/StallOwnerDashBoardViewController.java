@@ -2,8 +2,12 @@ package oop.banijjomelaoop;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class StallOwnerDashBoardViewController
 {
@@ -79,11 +83,7 @@ public class StallOwnerDashBoardViewController
 
     }
 
-    @javafx.fxml.FXML
-    public void logOutButtonOnAction(ActionEvent actionEvent)
-    {
 
-    }
 
     @javafx.fxml.FXML
     public void promotionOnActionButton(ActionEvent actionEvent)
@@ -116,5 +116,23 @@ public class StallOwnerDashBoardViewController
     public void manageProductOnActionButton(ActionEvent actionEvent)
     {
         stallownerTab.getSelectionModel().select(manageProductTab);
+    }
+
+    @javafx.fxml.FXML
+    public void stallOwnerLogOutButtonOnAction(ActionEvent actionEvent)
+    {
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("loginView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Trade Fair");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 }

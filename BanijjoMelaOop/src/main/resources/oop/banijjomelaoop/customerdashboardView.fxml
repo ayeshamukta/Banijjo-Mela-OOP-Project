@@ -24,9 +24,9 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TabPane layoutX="240.0" layoutY="71.0" prefHeight="366.0" prefWidth="546.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="customerTabpane" layoutX="240.0" layoutY="71.0" prefHeight="366.0" prefWidth="546.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Product">
+          <Tab fx:id="productTab" text="Product">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -45,7 +45,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Cart">
+          <Tab fx:id="cartTab" text="Cart">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="498.0">
                      <children>
@@ -95,7 +95,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Review">
+            <Tab fx:id="reviewTab" text="Review">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="498.0">
                      <children>
@@ -122,7 +122,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="My Orders">
+            <Tab fx:id="myOrdersTab" text="My Orders">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="338.0" prefWidth="438.0">
                      <children>
@@ -150,7 +150,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Disscunts">
+            <Tab fx:id="disscountTab" text="Disscunts">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="338.0" prefWidth="438.0">
                      <children>
@@ -176,7 +176,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Event Acti8vities">
+            <Tab fx:id="eventActivitiesTab" text="Event Acti8vities">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="338.0" prefWidth="438.0">
                      <children>
@@ -200,7 +200,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Ask Question">
+            <Tab fx:id="askQuestionTab" text="Ask Question">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="338.0" prefWidth="438.0">
                      <children>
@@ -226,7 +226,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Wish List">
+            <Tab fx:id="wishlistTab" text="Wish List">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="338.0" prefWidth="438.0">
                      <children>
@@ -255,47 +255,47 @@
       </TabPane>
       <AnchorPane layoutY="-4.0" prefHeight="472.0" prefWidth="224.0" style="-fx-background-color: #2F4F4F;">
          <children>
-            <Button layoutX="67.0" layoutY="83.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Shop" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="83.0" mnemonicParsing="false" onAction="#shopOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Shop" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="131.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Cart" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="131.0" mnemonicParsing="false" onAction="#cartOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Cart" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="177.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="To Review" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="177.0" mnemonicParsing="false" onAction="#toRieviewOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="To Review" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="My Orders" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="223.0" mnemonicParsing="false" onAction="#myOrdersOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="My Orders" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="266.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Disscounts" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="266.0" mnemonicParsing="false" onAction="#disscountsOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Disscounts" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="307.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Event Activities" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="307.0" mnemonicParsing="false" onAction="#eventActivitiesOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Event Activities" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="349.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="ASk Question" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="349.0" mnemonicParsing="false" onAction="#askQuestionOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="ASk Question" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="421.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Log Out" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="421.0" mnemonicParsing="false" onAction="#customerLogOutOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Log Out" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="67.0" layoutY="385.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Wishlist" textFill="WHITE">
+            <Button layoutX="67.0" layoutY="385.0" mnemonicParsing="false" onAction="#wishlistOnActionButton" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #517891;" text="Wishlist" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
