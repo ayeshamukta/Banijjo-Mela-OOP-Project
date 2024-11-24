@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<!--<?import javafx.scene.web.WebView?>-->
-
-<AnchorPane prefHeight="450.0" prefWidth="899.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.StallOwnerDashBoardViewController">
+<AnchorPane prefHeight="450.0" prefWidth="899.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.FeedbackController">
    <children>
-
+      <TabPane fx:id="stallownerTab" layoutX="238.0" layoutY="67.0" prefHeight="374.0" prefWidth="679.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="feedBackTab" text="Feedback">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="654.0">
+                     <children>
+                        <Label layoutX="32.0" layoutY="19.0" prefHeight="26.0" prefWidth="106.0" text="Feedback : ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="85.0" layoutY="128.0" prefHeight="20.0" prefWidth="80.0" text="Rating :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="ratingLabelForFeedback" layoutX="159.0" layoutY="125.0" prefHeight="26.0" prefWidth="200.0" />
+                        <ComboBox fx:id="feedbackProductComboBox" layoutX="159.0" layoutY="19.0" prefHeight="26.0" prefWidth="451.0" promptText="Choose Product" />
+                        <Button layoutX="303.0" layoutY="68.0" mnemonicParsing="false" onAction="#showOnActionForFeedBack" prefHeight="26.0" prefWidth="75.0" text="Show" />
+                        <Label layoutX="85.0" layoutY="165.0" prefHeight="20.0" prefWidth="80.0" text="Comment :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="commentLabelForFeedback" layoutX="165.0" layoutY="162.0" prefHeight="137.0" prefWidth="440.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
       <AnchorPane prefHeight="449.0" prefWidth="231.0" style="-fx-background-color: #2F4F4F;">
          <children>
-            <Button layoutX="58.0" layoutY="60.0" mnemonicParsing="false" onAction="#registerOnActionMainButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #517891;" text="Register" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="60.0" mnemonicParsing="false" onAction="#regiterOnActionMainButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #517891;" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
@@ -59,17 +90,14 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="231.0" prefHeight="54.0" prefWidth="648.0" />
-      <Label layoutX="-28.0" layoutY="6.0" text="Label" />
-      <Label alignment="CENTER" layoutX="231.0" layoutY="-2.0" prefHeight="58.0" prefWidth="713.0" style="-fx-background-color: #2F4F4F;" text="Stall Owner " textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="286.0" layoutY="136.0" prefHeight="258.0" prefWidth="612.0" text="Welcome To Stall Owner Dash Board" textAlignment="CENTER" wrapText="true">
-         <font>
-            <Font name="System Bold Italic" size="36.0" />
-         </font>
-      </Label>
+      <AnchorPane layoutX="231.0" prefHeight="54.0" prefWidth="648.0">
+         <children>
+            <Label alignment="CENTER" layoutY="-1.0" prefHeight="58.0" prefWidth="713.0" style="-fx-background-color: #2F4F4F;" text="Feed Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

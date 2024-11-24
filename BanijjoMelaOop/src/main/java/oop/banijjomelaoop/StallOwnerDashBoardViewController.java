@@ -1,121 +1,109 @@
 package oop.banijjomelaoop;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class StallOwnerDashBoardViewController
 {
-    @javafx.fxml.FXML
-    private Tab manageInventoryTab;
-    @javafx.fxml.FXML
-    private Tab feedBackTab;
-    @javafx.fxml.FXML
-    private ComboBox slotsComboBox;
-    @javafx.fxml.FXML
-    private Tab qAndaTab;
-    @javafx.fxml.FXML
-    private TableColumn durationColoumn;
-    @javafx.fxml.FXML
-    private Label errorLabelField;
-    @javafx.fxml.FXML
-    private Tab registerTab;
-    @javafx.fxml.FXML
-    private Tab postSaleServiceTab;
-    @javafx.fxml.FXML
-    private TableColumn ownerNameColoumn;
-    @javafx.fxml.FXML
-    private TextField ownerNameTextField;
-    @javafx.fxml.FXML
-    private Tab salePerformanceTab;
-    @javafx.fxml.FXML
-    private Tab promotionTab;
-    @javafx.fxml.FXML
-    private ComboBox stallRowComboBox;
-    @javafx.fxml.FXML
-    private ComboBox stallNumComboBox;
-    @javafx.fxml.FXML
-    private Tab manageProductTab;
-    @javafx.fxml.FXML
-    private TableColumn stallNumColoumn;
-    @javafx.fxml.FXML
-    private TableColumn stallRowColoumn;
-    @javafx.fxml.FXML
-    private TabPane stallownerTab;
+
+
+
 
     @javafx.fxml.FXML
-    public void initialize()
-    {
-        stallownerTab.addEventFilter(MouseEvent.MOUSE_PRESSED, event -> event.consume());
-
+    public void initialize() {
     }
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent)
     {
-        stallownerTab.getSelectionModel().select(salePerformanceTab);
-    }
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
 
-    @javafx.fxml.FXML
-    public void checkAvailibilityOnAction(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void regiterOnActionMainButton(ActionEvent actionEvent)
-    {
-        stallownerTab.getSelectionModel().select(registerTab);
+        }
     }
 
     @javafx.fxml.FXML
     public void qAndaOnActionButton(ActionEvent actionEvent)
     {
-        stallownerTab.getSelectionModel().select(qAndaTab);
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
     }
-
-    @javafx.fxml.FXML
-    public void registerOnAction(ActionEvent actionEvent)
-    {
-
-    }
-
-
 
     @javafx.fxml.FXML
     public void promotionOnActionButton(ActionEvent actionEvent)
     {
-        stallownerTab.getSelectionModel().select(promotionTab);
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
     }
-
-
-
-    @javafx.fxml.FXML
-    public void feedbackOnActionButton(ActionEvent actionEvent)
-    {
-        stallownerTab.getSelectionModel().select(feedBackTab);
-    }
-
-    @javafx.fxml.FXML
-    public void postSaleServiceOnActionButton(ActionEvent actionEvent)
-    {
-        stallownerTab.getSelectionModel().select(postSaleServiceTab);
-    }
-
-    @javafx.fxml.FXML
-    public void manageInventoryOnActionButton(ActionEvent actionEvent)
-    {
-        stallownerTab.getSelectionModel().select(manageInventoryTab);
-    }
-
 
     @javafx.fxml.FXML
     public void manageProductOnActionButton(ActionEvent actionEvent)
     {
-        stallownerTab.getSelectionModel().select(manageProductTab);
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void feedbackOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
@@ -134,5 +122,67 @@ public class StallOwnerDashBoardViewController
         {
 
         }
+    }
+
+    @javafx.fxml.FXML
+    public void postSaleServiceOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void manageInventoryOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void registerOnActionMainButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("registerView.fxml"));
+            Scene customerScene = new Scene(fxmlLoader.load());
+            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+            customerStage.setTitle("Register");
+            customerStage.setScene(customerScene);
+            customerStage.show();
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+
+    @Deprecated
+    public void showOnActionForSalePerformane(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void regiterOnActionMainButton(ActionEvent actionEvent) {
     }
 }
