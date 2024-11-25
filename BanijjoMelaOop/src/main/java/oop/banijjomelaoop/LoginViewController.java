@@ -13,13 +13,13 @@ import javafx.stage.Stage;
 public class LoginViewController
 {
     @javafx.fxml.FXML
-    private TextField userNameTextField;
+    protected TextField userNameTextField;
     @javafx.fxml.FXML
     private TextField passwordTextField;
     @javafx.fxml.FXML
     private Label errorLabelingField;
     @javafx.fxml.FXML
-    private ComboBox<String> groupComboBoxField;
+    protected ComboBox<String> groupComboBoxField;
 
     @javafx.fxml.FXML
     public void initialize()

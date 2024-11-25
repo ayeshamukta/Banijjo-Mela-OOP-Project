@@ -39,7 +39,7 @@
       </TabPane>
       <AnchorPane prefHeight="449.0" prefWidth="231.0" style="-fx-background-color: #2F4F4F;">
          <children>
-            <Button layoutX="58.0" layoutY="60.0" mnemonicParsing="false" onAction="#regiterOnActionMainButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #517891;" text="Register" textFill="WHITE">
+            <Button layoutX="58.0" layoutY="60.0" mnemonicParsing="false" onAction="#regiterOnActionMainButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #517891;" text="Register Stall" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
@@ -69,7 +69,7 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="58.0" layoutY="217.0" mnemonicParsing="false" onAction="#postSaleServiceOnActionButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #517891;" text="Post Sale Service" textFill="WHITE">
+            <Button disable="true" layoutX="58.0" layoutY="217.0" mnemonicParsing="false" onAction="#postSaleServiceOnActionButton" prefHeight="26.0" prefWidth="115.0" style="-fx-background-color: #517891;" text="Post Sale Service" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>

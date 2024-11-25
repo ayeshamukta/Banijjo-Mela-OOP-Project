@@ -14,7 +14,7 @@
    <children>
       <AnchorPane prefHeight="444.0" prefWidth="200.0" style="-fx-background-color: #2F4F4F;">
          <children>
-            <Button layoutX="37.0" layoutY="56.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #517891;" text="Register" textFill="WHITE">
+            <Button layoutX="37.0" layoutY="56.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #517891;" text="Register Stall" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
