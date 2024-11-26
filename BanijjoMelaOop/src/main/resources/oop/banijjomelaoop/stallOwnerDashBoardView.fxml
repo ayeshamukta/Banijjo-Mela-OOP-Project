@@ -7,7 +7,7 @@
 
 <!--<?import javafx.scene.web.WebView?>-->
 
-<AnchorPane prefHeight="450.0" prefWidth="899.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.StallOwnerDashBoardViewController">
+<AnchorPane prefHeight="450.0" prefWidth="899.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.ayesha_2022861.StallOwnerDashBoardViewController">
    <children>
 
       <AnchorPane prefHeight="449.0" prefWidth="231.0" style="-fx-background-color: #2F4F4F;">

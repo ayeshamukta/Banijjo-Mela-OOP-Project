@@ -1,27 +1,26 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
-public class ManageInventoryController {
+public class PostSaleServiceController {
     @javafx.fxml.FXML
-    private ComboBox ediableComboBoxForManageInventory;
+    private TableView postSaleTableView;
     @javafx.fxml.FXML
-    private Tab manageInventoryTab;
+    private TableColumn approvalColoumnForPostSaleService;
     @javafx.fxml.FXML
-    private ComboBox productIdComboBoxForManageInventory;
+    private TableColumn dateOfPurchaseColoumnForPostSaleService;
     @javafx.fxml.FXML
-    private TableColumn quantityColForManageInventory;
-    @javafx.fxml.FXML
-    private TextField enterValueTextFieldForManageInventory;
-    @javafx.fxml.FXML
-    private TableColumn productNameColForManageInventory;
-    @javafx.fxml.FXML
-    private TableColumn proIdColForManageInventory;
-    @javafx.fxml.FXML
-    private TableView inventoryTableView;
+    private TableColumn productNameColoumnForPostSaleService;
     @javafx.fxml.FXML
     private TabPane stallownerTab;
+    @javafx.fxml.FXML
+    private Tab postSaleServiceTab;
+    @javafx.fxml.FXML
+    private TableColumn orderIDColoumnForPostSaleService;
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent) {
@@ -33,10 +32,6 @@ public class ManageInventoryController {
 
     @javafx.fxml.FXML
     public void qAndaOnActionButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void updateBtnOnActionlForManageInventory(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

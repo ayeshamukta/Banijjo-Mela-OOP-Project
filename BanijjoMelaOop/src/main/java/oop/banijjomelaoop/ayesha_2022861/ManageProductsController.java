@@ -1,24 +1,33 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
-public class QandAController {
+public class ManageProductsController {
     @javafx.fxml.FXML
-    private ListView queryShownListViewForQuery;
+    private TextField quanityTextFieldForManageProducts;
     @javafx.fxml.FXML
-    private TextArea answerTextAreaFieldForQuery;
+    private TextField priceTextFieldForManageProduct;
     @javafx.fxml.FXML
-    private Tab qAndaTab;
+    private TextField productIdTextField;
+    @javafx.fxml.FXML
+    private TextField productNameTextField;
+    @javafx.fxml.FXML
+    private TableColumn quantityColoumnForManageProducts;
+    @javafx.fxml.FXML
+    private TextField imgField;
+    @javafx.fxml.FXML
+    private TableColumn productNameColoumnForManageProducts;
+    @javafx.fxml.FXML
+    private Tab manageProductTab;
     @javafx.fxml.FXML
     private TabPane stallownerTab;
-
     @javafx.fxml.FXML
-    public void submitOnActionForQandA(ActionEvent actionEvent) {
-    }
+    private Button updateButtonOnActionForManageProducts;
+    @javafx.fxml.FXML
+    private TableColumn productIDColoumForManageProducts;
+    @javafx.fxml.FXML
+    private TextField descriptionTextFieldForManageProducts;
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent) {

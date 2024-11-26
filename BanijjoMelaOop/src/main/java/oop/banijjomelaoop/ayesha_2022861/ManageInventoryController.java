@@ -1,20 +1,25 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 
-public class FeedbackController {
+public class ManageInventoryController {
     @javafx.fxml.FXML
-    private Label ratingLabelForFeedback;
+    private ComboBox ediableComboBoxForManageInventory;
     @javafx.fxml.FXML
-    private Label commentLabelForFeedback;
+    private Tab manageInventoryTab;
     @javafx.fxml.FXML
-    private Tab feedBackTab;
+    private ComboBox productIdComboBoxForManageInventory;
     @javafx.fxml.FXML
-    private ComboBox feedbackProductComboBox;
+    private TableColumn quantityColForManageInventory;
+    @javafx.fxml.FXML
+    private TextField enterValueTextFieldForManageInventory;
+    @javafx.fxml.FXML
+    private TableColumn productNameColForManageInventory;
+    @javafx.fxml.FXML
+    private TableColumn proIdColForManageInventory;
+    @javafx.fxml.FXML
+    private TableView inventoryTableView;
     @javafx.fxml.FXML
     private TabPane stallownerTab;
 
@@ -31,7 +36,7 @@ public class FeedbackController {
     }
 
     @javafx.fxml.FXML
-    public void showOnActionForFeedBack(ActionEvent actionEvent) {
+    public void updateBtnOnActionlForManageInventory(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

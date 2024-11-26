@@ -1,15 +1,15 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 
-public class DisscountViewController
+public class AskQuestionViewController
 {
     @javafx.fxml.FXML
-    private Tab disscountTab;
-    @javafx.fxml.FXML
     private TabPane customerTabpane;
+    @javafx.fxml.FXML
+    private Tab askQuestionTab;
 
     @javafx.fxml.FXML
     public void initialize() {

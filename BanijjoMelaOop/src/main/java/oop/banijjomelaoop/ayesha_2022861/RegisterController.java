@@ -1,38 +1,36 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class PromotionController {
+public class RegisterController {
     @javafx.fxml.FXML
-    private TextField promoCodeForPromotion;
+    private ComboBox stallNumComboBox;
     @javafx.fxml.FXML
-    private TextField disscountTextFieldForPromotion;
+    private ComboBox slotsComboBox;
     @javafx.fxml.FXML
-    private ComboBox prouctsComboBoxForPromotion;
+    private Label registerErrorLabelField;
+    @javafx.fxml.FXML
+    private Label registerTabErrorMessage;
+    @javafx.fxml.FXML
+    private TableColumn durationColoumn;
+    @javafx.fxml.FXML
+    private Tab registerTab;
+    @javafx.fxml.FXML
+    private TableColumn stallNumColoumn;
     @javafx.fxml.FXML
     private TabPane stallownerTab;
     @javafx.fxml.FXML
-    private TableColumn codeColoumnForPromotion;
+    private TableColumn ownerNameColoumn;
     @javafx.fxml.FXML
-    private TableView promotionTableView;
+    private TextField ownerNameTextField;
     @javafx.fxml.FXML
-    private Tab promotionTab;
+    private TableColumn stallRowColoumn;
     @javafx.fxml.FXML
-    private TableColumn productNameColoumnForPromotion;
-    @javafx.fxml.FXML
-    private TableColumn percentageColoumnForPromotion;
+    private ComboBox stallRowComboBox;
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void regiterOnActionMainButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void updateButtonOnActionForPromotion(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -61,5 +59,9 @@ public class PromotionController {
 
     @javafx.fxml.FXML
     public void manageInventoryOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void registerOnActionMainButton(ActionEvent actionEvent) {
     }
 }

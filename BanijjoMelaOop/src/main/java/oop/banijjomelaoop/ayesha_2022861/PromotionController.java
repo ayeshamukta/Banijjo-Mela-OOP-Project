@@ -1,33 +1,27 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
-public class ManageProductsController {
+public class PromotionController {
     @javafx.fxml.FXML
-    private TextField quanityTextFieldForManageProducts;
+    private TextField promoCodeForPromotion;
     @javafx.fxml.FXML
-    private TextField priceTextFieldForManageProduct;
+    private TextField disscountTextFieldForPromotion;
     @javafx.fxml.FXML
-    private TextField productIdTextField;
-    @javafx.fxml.FXML
-    private TextField productNameTextField;
-    @javafx.fxml.FXML
-    private TableColumn quantityColoumnForManageProducts;
-    @javafx.fxml.FXML
-    private TextField imgField;
-    @javafx.fxml.FXML
-    private TableColumn productNameColoumnForManageProducts;
-    @javafx.fxml.FXML
-    private Tab manageProductTab;
+    private ComboBox prouctsComboBoxForPromotion;
     @javafx.fxml.FXML
     private TabPane stallownerTab;
     @javafx.fxml.FXML
-    private Button updateButtonOnActionForManageProducts;
+    private TableColumn codeColoumnForPromotion;
     @javafx.fxml.FXML
-    private TableColumn productIDColoumForManageProducts;
+    private TableView promotionTableView;
     @javafx.fxml.FXML
-    private TextField descriptionTextFieldForManageProducts;
+    private Tab promotionTab;
+    @javafx.fxml.FXML
+    private TableColumn productNameColoumnForPromotion;
+    @javafx.fxml.FXML
+    private TableColumn percentageColoumnForPromotion;
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent) {
@@ -35,6 +29,10 @@ public class ManageProductsController {
 
     @javafx.fxml.FXML
     public void regiterOnActionMainButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void updateButtonOnActionForPromotion(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

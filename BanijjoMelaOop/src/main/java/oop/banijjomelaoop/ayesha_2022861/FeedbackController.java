@@ -1,26 +1,22 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 
-public class PostSaleServiceController {
+public class FeedbackController {
     @javafx.fxml.FXML
-    private TableView postSaleTableView;
+    private Label ratingLabelForFeedback;
     @javafx.fxml.FXML
-    private TableColumn approvalColoumnForPostSaleService;
+    private Label commentLabelForFeedback;
     @javafx.fxml.FXML
-    private TableColumn dateOfPurchaseColoumnForPostSaleService;
+    private Tab feedBackTab;
     @javafx.fxml.FXML
-    private TableColumn productNameColoumnForPostSaleService;
+    private ComboBox feedbackProductComboBox;
     @javafx.fxml.FXML
     private TabPane stallownerTab;
-    @javafx.fxml.FXML
-    private Tab postSaleServiceTab;
-    @javafx.fxml.FXML
-    private TableColumn orderIDColoumnForPostSaleService;
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent) {
@@ -32,6 +28,10 @@ public class PostSaleServiceController {
 
     @javafx.fxml.FXML
     public void qAndaOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void showOnActionForFeedBack(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

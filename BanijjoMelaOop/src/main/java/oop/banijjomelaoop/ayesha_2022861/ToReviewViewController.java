@@ -1,18 +1,15 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.layout.AnchorPane;
 
-public class MyOrdersController
+public class ToReviewViewController
 {
-    @javafx.fxml.FXML
-    private Tab myOrdersTab;
     @javafx.fxml.FXML
     private TabPane customerTabpane;
     @javafx.fxml.FXML
-    private AnchorPane myOrderTab;
+    private Tab reviewTab;
 
     @javafx.fxml.FXML
     public void initialize() {

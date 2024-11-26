@@ -1,15 +1,15 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 
-public class ToReviewViewController
+public class WishlistViewController
 {
     @javafx.fxml.FXML
     private TabPane customerTabpane;
     @javafx.fxml.FXML
-    private Tab reviewTab;
+    private Tab wishlistTab;
 
     @javafx.fxml.FXML
     public void initialize() {

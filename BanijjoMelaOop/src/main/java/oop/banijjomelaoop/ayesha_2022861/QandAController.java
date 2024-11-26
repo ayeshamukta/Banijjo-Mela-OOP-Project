@@ -1,36 +1,31 @@
-package oop.banijjomelaoop;
+package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 
-public class RegisterController {
+public class QandAController {
     @javafx.fxml.FXML
-    private ComboBox stallNumComboBox;
+    private ListView queryShownListViewForQuery;
     @javafx.fxml.FXML
-    private ComboBox slotsComboBox;
+    private TextArea answerTextAreaFieldForQuery;
     @javafx.fxml.FXML
-    private Label registerErrorLabelField;
-    @javafx.fxml.FXML
-    private Label registerTabErrorMessage;
-    @javafx.fxml.FXML
-    private TableColumn durationColoumn;
-    @javafx.fxml.FXML
-    private Tab registerTab;
-    @javafx.fxml.FXML
-    private TableColumn stallNumColoumn;
+    private Tab qAndaTab;
     @javafx.fxml.FXML
     private TabPane stallownerTab;
+
     @javafx.fxml.FXML
-    private TableColumn ownerNameColoumn;
-    @javafx.fxml.FXML
-    private TextField ownerNameTextField;
-    @javafx.fxml.FXML
-    private TableColumn stallRowColoumn;
-    @javafx.fxml.FXML
-    private ComboBox stallRowComboBox;
+    public void submitOnActionForQandA(ActionEvent actionEvent) {
+    }
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void regiterOnActionMainButton(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
@@ -59,9 +54,5 @@ public class RegisterController {
 
     @javafx.fxml.FXML
     public void manageInventoryOnActionButton(ActionEvent actionEvent) {
-    }
-
-    @Deprecated
-    public void registerOnActionMainButton(ActionEvent actionEvent) {
     }
 }
