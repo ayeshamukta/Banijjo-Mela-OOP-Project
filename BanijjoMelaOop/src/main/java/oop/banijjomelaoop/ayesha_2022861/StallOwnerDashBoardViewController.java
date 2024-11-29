@@ -4,14 +4,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import oop.banijjomelaoop.MainApplication;
+import oop.banijjomelaoop.Utility;
+
+import java.io.IOException;
 
 public class StallOwnerDashBoardViewController
 {
 
 
-
+    @javafx.fxml.FXML
+    private AnchorPane stallOwnerTabViewAnchorPane;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -22,12 +27,7 @@ public class StallOwnerDashBoardViewController
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            SalePerformanceController salePerformanceController = Utility.sceneSwitch(actionEvent, "salePerformanceView.fxml", "Sale Performance" );
         }
         catch (Exception e)
         {
@@ -38,14 +38,12 @@ public class StallOwnerDashBoardViewController
     @javafx.fxml.FXML
     public void qAndaOnActionButton(ActionEvent actionEvent)
     {
+
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            QandAController qa = Utility.sceneSwitch(actionEvent, "q&a.fxml", "Q & A" );
+
+
         }
         catch (Exception e)
         {
@@ -54,16 +52,16 @@ public class StallOwnerDashBoardViewController
     }
 
     @javafx.fxml.FXML
-    public void promotionOnActionButton(ActionEvent actionEvent)
-    {
+    public void promotionOnActionButton(ActionEvent actionEvent) throws IOException {
+
+
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+
+            PromotionController pc = Utility.sceneSwitch(actionEvent, "Promotion.fxml", "Promotion" );
+
+
+
         }
         catch (Exception e)
         {
@@ -76,12 +74,7 @@ public class StallOwnerDashBoardViewController
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            ManageProductsController manage_products = Utility.sceneSwitch(actionEvent, "manageProducts.fxml", "Manage Products" );
         }
         catch (Exception e)
         {
@@ -94,12 +87,8 @@ public class StallOwnerDashBoardViewController
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            FeedbackController feed_back = Utility.sceneSwitch(actionEvent, "feedback.fxml", "Feed Back" );
+
         }
         catch (Exception e)
         {
@@ -112,12 +101,8 @@ public class StallOwnerDashBoardViewController
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("loginView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Trade Fair");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            LoginViewController logout = Utility.sceneSwitch(actionEvent, "loginView.fxml", "Trade Fair" );
+
         }
         catch (Exception e)
         {
@@ -130,12 +115,7 @@ public class StallOwnerDashBoardViewController
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            PostSaleServiceController post_sale_service = Utility.sceneSwitch(actionEvent, "postSaleService.fxml", "Post Sale Service" );
         }
         catch (Exception e)
         {
@@ -148,12 +128,7 @@ public class StallOwnerDashBoardViewController
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("manageInventoryView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            ManageInventoryController manageInventoryController = Utility.sceneSwitch(actionEvent, "manageInventoryView.fxml", "Manage Inventory" );
         }
         catch (Exception e)
         {
@@ -166,12 +141,7 @@ public class StallOwnerDashBoardViewController
     {
         try
         {
-            FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("registerView.fxml"));
-            Scene customerScene = new Scene(fxmlLoader.load());
-            Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-            customerStage.setTitle("Register");
-            customerStage.setScene(customerScene);
-            customerStage.show();
+            RegisterController registerController = Utility.sceneSwitch(actionEvent, "registerView.fxml", "Register" );
         }
         catch (Exception e)
         {

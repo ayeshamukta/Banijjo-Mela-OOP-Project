@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
+import oop.banijjomelaoop.Utility;
 
 public class MyOrdersController
 {
@@ -17,40 +18,168 @@ public class MyOrdersController
     @javafx.fxml.FXML
     public void initialize() {
     }
+//
+//    @javafx.fxml.FXML
+//    public void toRieviewOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void customerLogOutOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void myOrdersOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void cartOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void askQuestionOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void wishlistOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void eventActivitiesOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void disscountsOnActionButton(ActionEvent actionEvent) {
+//    }
+//
+//    @javafx.fxml.FXML
+//    public void shopOnActionButton(ActionEvent actionEvent) {
+//    }
 
     @javafx.fxml.FXML
-    public void toRieviewOnActionButton(ActionEvent actionEvent) {
+    public void toRieviewOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            ToReviewViewController toReviewViewController = Utility.sceneSwitch(actionEvent, "toReviewView.fxml", "Review" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void customerLogOutOnActionButton(ActionEvent actionEvent) {
+    public void customerLogOutOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            LoginViewController logout = Utility.sceneSwitch(actionEvent, "loginView.fxml", "Trade Fair" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void myOrdersOnActionButton(ActionEvent actionEvent) {
+    public void myOrdersOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            MyOrdersController my_order = Utility.sceneSwitch(actionEvent, "myOrdersView.fxml", "My Order" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void cartOnActionButton(ActionEvent actionEvent) {
+    public void cartOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            CartViewController cartViewController = Utility.sceneSwitch(actionEvent, "cartView.fxml", "Cart" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void askQuestionOnActionButton(ActionEvent actionEvent) {
+    public void askQuestionOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            AskQuestionViewController askQuestionViewController = Utility.sceneSwitch(actionEvent, "askQuestionView.fxml", "Ask Question" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void wishlistOnActionButton(ActionEvent actionEvent) {
+    public void wishlistOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            WishlistViewController wishlistViewController = Utility.sceneSwitch(actionEvent, "wishlistView.fxml", "Wish List" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void eventActivitiesOnActionButton(ActionEvent actionEvent) {
+    public void eventActivitiesOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            EventActivitiesViewController eventActivitiesViewController = Utility.sceneSwitch(actionEvent, "eventActivitiesView.fxml", "Event Activities" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void disscountsOnActionButton(ActionEvent actionEvent) {
+    public void disscountsOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            DisscountViewController disscountViewController = Utility.sceneSwitch(actionEvent, "disscountView.fxml", "Discount" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 
     @javafx.fxml.FXML
-    public void shopOnActionButton(ActionEvent actionEvent) {
+    public void shopOnActionButton(ActionEvent actionEvent)
+    {
+        try
+        {
+            ProductViewController productViewController = Utility.sceneSwitch(actionEvent, "productView.fxml", "Products" );
+
+        }
+        catch (Exception e)
+        {
+
+        }
     }
+
+
 }
