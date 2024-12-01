@@ -1,5 +1,7 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,6 +19,9 @@ public class StallOwnerDashBoardViewController
 
     @javafx.fxml.FXML
     private AnchorPane stallOwnerTabViewAnchorPane;
+
+
+
 
     @javafx.fxml.FXML
     public void initialize() {

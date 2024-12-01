@@ -22,6 +22,9 @@ public class PostSaleServiceController {
     private Tab postSaleServiceTab;
     @javafx.fxml.FXML
     private TableColumn orderIDColoumnForPostSaleService;
+    @javafx.fxml.FXML
+    public void initialize() {
+    }
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent)
