@@ -52,7 +52,7 @@ public class StallOwnerDashBoardViewController
     }
 
     @javafx.fxml.FXML
-    public void promotionOnActionButton(ActionEvent actionEvent) throws IOException {
+    public void promotionOnActionButton(ActionEvent actionEvent)  {
 
 
         try
@@ -149,11 +149,5 @@ public class StallOwnerDashBoardViewController
         }
     }
 
-    @Deprecated
-    public void showOnActionForSalePerformane(ActionEvent actionEvent) {
-    }
 
-    @Deprecated
-    public void regiterOnActionMainButton(ActionEvent actionEvent) {
-    }
 }
