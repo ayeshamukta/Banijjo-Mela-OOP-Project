@@ -2,7 +2,6 @@ package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-import oop.banijjomelaoop.Utility;
 
 public class ManageProductsController {
     @javafx.fxml.FXML
@@ -35,7 +34,7 @@ public class ManageProductsController {
     {
         try
         {
-            SalePerformanceController salePerformanceController = Utility.sceneSwitch(actionEvent, "salePerformanceView.fxml", "Sale Performance" );
+            SalePerformanceController salePerformanceController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/salePerformanceView.fxml", "Sale Performance" );
         }
         catch (Exception e)
         {
@@ -50,7 +49,7 @@ public class ManageProductsController {
     {
         try
         {
-            QandAController qa = Utility.sceneSwitch(actionEvent, "q&a.fxml", "Q & A" );
+            QandAController qa = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/q&a.fxml", "Q & A" );
 
 
         }
@@ -66,7 +65,7 @@ public class ManageProductsController {
         try
         {
 
-            PromotionController pc = Utility.sceneSwitch(actionEvent, "Promotion.fxml", "Promotion" );
+            PromotionController pc = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/Promotion.fxml", "Promotion" );
 
 
 
@@ -82,7 +81,7 @@ public class ManageProductsController {
     {
         try
         {
-            ManageProductsController manage_products = Utility.sceneSwitch(actionEvent, "manageProducts.fxml", "Manage Products" );
+            ManageProductsController manage_products = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/manageProducts.fxml", "Manage Products" );
         }
         catch (Exception e)
         {
@@ -95,7 +94,7 @@ public class ManageProductsController {
     {
         try
         {
-            FeedbackController feed_back = Utility.sceneSwitch(actionEvent, "feedback.fxml", "Feed Back" );
+            FeedbackController feed_back = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/feedback.fxml", "Feed Back" );
 
         }
         catch (Exception e)
@@ -109,7 +108,7 @@ public class ManageProductsController {
     {
         try
         {
-            LoginViewController logout = Utility.sceneSwitch(actionEvent, "loginView.fxml", "Trade Fair" );
+            LoginViewController logout = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/loginView.fxml", "Trade Fair" );
 
         }
         catch (Exception e)
@@ -123,7 +122,7 @@ public class ManageProductsController {
     {
         try
         {
-            PostSaleServiceController post_sale_service = Utility.sceneSwitch(actionEvent, "postSaleService.fxml", "Post Sale Service" );
+            PostSaleServiceController post_sale_service = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/postSaleService.fxml", "Post Sale Service" );
         }
         catch (Exception e)
         {
@@ -136,7 +135,7 @@ public class ManageProductsController {
     {
         try
         {
-            ManageInventoryController manageInventoryController = Utility.sceneSwitch(actionEvent, "manageInventoryView.fxml", "Manage Inventory" );
+            ManageInventoryController manageInventoryController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/manageInventoryView.fxml", "Manage Inventory" );
         }
         catch (Exception e)
         {
@@ -149,7 +148,7 @@ public class ManageProductsController {
     {
         try
         {
-            RegisterController registerController = Utility.sceneSwitch(actionEvent, "registerView.fxml", "Register" );
+            RegisterController registerController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/registerView.fxml", "Register" );
         }
         catch (Exception e)
         {

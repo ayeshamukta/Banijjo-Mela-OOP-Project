@@ -37,7 +37,7 @@ public class LoginViewController
         {
             try
             {
-                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("CustomerdashboardView.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/oop/banijjomelaoop/ayesha_2022861/CustomerdashboardView.fxml"));
                 Scene customerScene = new Scene(fxmlLoader.load());
                 Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
                 customerStage.setTitle("Customer Dashboard");
@@ -54,7 +54,7 @@ public class LoginViewController
         {
             try
             {
-                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("stallOwnerDashBoardView.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("/oop/banijjomelaoop/ayesha_2022861/stallOwnerDashBoardView.fxml"));
                 Scene customerScene = new Scene(fxmlLoader.load());
                 Stage customerStage = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
                 customerStage.setTitle("Stall Owner Dashboard");

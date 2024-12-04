@@ -2,12 +2,6 @@ package oop.banijjomelaoop.ayesha_2022861;
 
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import oop.banijjomelaoop.MainApplication;
-import oop.banijjomelaoop.Utility;
 
 public class CustomerdashboardViewController
 {
@@ -25,7 +19,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            ToReviewViewController toReviewViewController = Utility.sceneSwitch(actionEvent, "toReviewView.fxml", "Review" );
+            ToReviewViewController toReviewViewController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/toReviewView.fxml", "Review" );
 
         }
         catch (Exception e)
@@ -39,7 +33,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            LoginViewController logout = Utility.sceneSwitch(actionEvent, "loginView.fxml", "Trade Fair" );
+            LoginViewController logout = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/loginView.fxml", "Trade Fair" );
 
         }
         catch (Exception e)
@@ -53,7 +47,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            MyOrdersController my_order = Utility.sceneSwitch(actionEvent, "myOrdersView.fxml", "My Order" );
+            MyOrdersController my_order = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/myOrdersView.fxml", "My Order" );
 
         }
         catch (Exception e)
@@ -67,7 +61,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            CartViewController cartViewController = Utility.sceneSwitch(actionEvent, "cartView.fxml", "Cart" );
+            CartViewController cartViewController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/cartView.fxml", "Cart" );
 
         }
         catch (Exception e)
@@ -81,7 +75,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            AskQuestionViewController askQuestionViewController = Utility.sceneSwitch(actionEvent, "askQuestionView.fxml", "Ask Question" );
+            AskQuestionViewController askQuestionViewController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/askQuestionView.fxml", "Ask Question" );
 
         }
         catch (Exception e)
@@ -95,7 +89,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            WishlistViewController wishlistViewController = Utility.sceneSwitch(actionEvent, "wishlistView.fxml", "Wish List" );
+            WishlistViewController wishlistViewController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/wishlistView.fxml", "Wish List" );
 
         }
         catch (Exception e)
@@ -109,7 +103,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            EventActivitiesViewController eventActivitiesViewController = Utility.sceneSwitch(actionEvent, "eventActivitiesView.fxml", "Event Activities" );
+            EventActivitiesViewController eventActivitiesViewController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/eventActivitiesView.fxml", "Event Activities" );
 
         }
         catch (Exception e)
@@ -123,7 +117,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            DisscountViewController disscountViewController = Utility.sceneSwitch(actionEvent, "disscountView.fxml", "Discount" );
+            DisscountViewController disscountViewController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/disscountView.fxml", "Discount" );
 
         }
         catch (Exception e)
@@ -137,7 +131,7 @@ public class CustomerdashboardViewController
     {
         try
         {
-            ProductViewController productViewController = Utility.sceneSwitch(actionEvent, "productView.fxml", "Products" );
+            ProductViewController productViewController = Utility.sceneSwitch(actionEvent, "/oop/banijjomelaoop/ayesha_2022861/productView.fxml", "Products" );
 
         }
         catch (Exception e)
