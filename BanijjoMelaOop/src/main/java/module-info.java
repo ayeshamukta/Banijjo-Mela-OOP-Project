@@ -1,6 +1,7 @@
 module oop.banijjomelaoop {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens oop.banijjomelaoop to javafx.fxml;
