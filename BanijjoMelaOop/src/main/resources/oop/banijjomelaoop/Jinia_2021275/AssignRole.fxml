@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.AssignRoleController">
+    <children>
+        <Label layoutX="180.0" layoutY="20.0" text="Assign Role to Team Member" style="-fx-background-color: #2F4F4F;" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="30.0" layoutY="80.0" text="Team Member Name:"/>
+        <TextField fx:id="memNameTextField" layoutX="150.0" layoutY="80.0" prefWidth="300.0" />
+
+        <Label layoutX="30.0" layoutY="120.0" text="Role:"/>
+        <TextField fx:id="roleTextField" layoutX="150.0" layoutY="120.0" prefWidth="300.0" />
+
+        <Button layoutX="150.0" layoutY="160.0" text="Assign Role" onAction="#assignRole"/>
+        <Button layoutX="300.0" layoutY="160.0" text="Update Role" onAction="#updateRole"/>
+        <Button layoutX="450.0" layoutY="160.0" text="Remove Team Member" onAction="#removeTeamMember"/>
+    </children>
+</AnchorPane>

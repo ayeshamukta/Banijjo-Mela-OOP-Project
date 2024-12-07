@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.ROIController">
+    <children>
+        <Label layoutX="180.0" layoutY="20.0" text="Track ROI" style="-fx-background-color: #2F4F4F;" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="30.0" layoutY="80.0" text="Event ID:"/>
+        <TextField fx:id="eventIdTextField" layoutX="150.0" layoutY="80.0" prefWidth="300.0" />
+
+        <Label layoutX="30.0" layoutY="120.0" text="Sponsor ID:"/>
+        <TextField fx:id="sponsorIdTextField" layoutX="150.0" layoutY="120.0" prefWidth="300.0" />
+
+        <Label layoutX="30.0" layoutY="160.0" text="Investment:"/>
+        <TextField fx:id="investmentTextField" layoutX="150.0" layoutY="160.0" prefWidth="300.0" />
+
+        <Label layoutX="30.0" layoutY="200.0" text="Returns:"/>
+        <TextField fx:id="returnsTextField" layoutX="150.0" layoutY="200.0" prefWidth="300.0" />
+
+        <Button layoutX="150.0" layoutY="240.0" text="Calculate ROI" onAction="#calculateROI"/>
+        <Button layoutX="300.0" layoutY="240.0" text="Generate Report" onAction="#generateROIReport"/>
+    </children>
+</AnchorPane>
