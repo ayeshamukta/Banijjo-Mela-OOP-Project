@@ -1,16 +1,14 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
-import javafx.scene.image.Image;
+import java.io.Serializable;
 
-import java.time.LocalDate;
-
-public class Product
+public class Product implements Serializable
 {
     private String productName,productType;
     private int productID,productQuantity;
     private double productPrice;
     private String productStatus;
-    private Image productImg;
+    private String imgPath;
 
     public String getProductName() {
         return productName;
@@ -60,25 +58,22 @@ public class Product
         this.productStatus = productStatus;
     }
 
-    public Image getProductImg() {
-        return productImg;
+    public String getImgPath() {
+        return imgPath;
     }
 
-    public void setProductImg(Image productImg) {
-        this.productImg = productImg;
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
-    public Product() {
-    }
-
-    public Product(String productName, String productType, int productID, int productQuantity, double productPrice, String productStatus, Image productImg) {
+    public Product(String productName, String productType, int productID, int productQuantity, double productPrice, String productStatus, String imgPath) {
         this.productName = productName;
         this.productType = productType;
         this.productID = productID;
         this.productQuantity = productQuantity;
         this.productPrice = productPrice;
         this.productStatus = productStatus;
-        this.productImg = productImg;
+        this.imgPath = imgPath;
     }
 
     public Product(String productName, String productType, int productID, int productQuantity, double productPrice, String productStatus) {
@@ -88,5 +83,21 @@ public class Product
         this.productQuantity = productQuantity;
         this.productPrice = productPrice;
         this.productStatus = productStatus;
+    }
+
+    public Product() {
+    }
+
+    public Product(String imgPath, String productName, double productPrice, int productQuantity) {
+        this.imgPath = imgPath;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
+    }
+
+    public Product(String productName, double productPrice, String imgPath) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.imgPath = imgPath;
     }
 }

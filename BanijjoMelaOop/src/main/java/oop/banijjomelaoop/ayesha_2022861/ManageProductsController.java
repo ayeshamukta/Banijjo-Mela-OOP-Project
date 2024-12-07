@@ -3,23 +3,25 @@ package oop.banijjomelaoop.ayesha_2022861;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.awt.image.BufferedImage;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.security.cert.Extension;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ManageProductsController {
+public class ManageProductsController  {
     @javafx.fxml.FXML
     private TextField quanityTextFieldForManageProducts;
     @javafx.fxml.FXML
@@ -52,20 +54,27 @@ public class ManageProductsController {
     private ComboBox<String> productStatusComboBoxField;
     @javafx.fxml.FXML
     private TableColumn<Product, String> statusColoumnForManageProducts12;
+    private String imgPath;
 
     private Image img;
 
-    private ObservableList<Product> productList = FXCollections.observableArrayList();
 
-    private ArrayList<Image> images = new ArrayList<>();
+    public ArrayList<Product> productList = new ArrayList<>();
+
+
+    @javafx.fxml.FXML
+    private Label imgErrorMessege;
     @javafx.fxml.FXML
     private ImageView imgViewContainer;
 
+    public ArrayList<Product> getProductList() {
+        return productList;
+    }
 
     @javafx.fxml.FXML
     public void initialize()
     {
-
+        productList = new ArrayList<Product>();
 
         productNameColoumnForManageProducts.setCellValueFactory(new PropertyValueFactory<>("productName"));
         productIDColoumForManageProducts.setCellValueFactory(new PropertyValueFactory<>("productID"));
@@ -75,7 +84,7 @@ public class ManageProductsController {
         statusColoumnForManageProducts12.setCellValueFactory(new PropertyValueFactory<>("productStatus"));
 
 
-        productsTableView.setItems(productList);
+
 
         productTypeComboBoxField.getItems().addAll("Food", "Clothing", " Cosmetics", "Stationary", "Footwear");
         productStatusComboBoxField.getItems().addAll("Available", "Unavailable","Up Coming");
@@ -221,9 +230,7 @@ public class ManageProductsController {
     }
 
     @javafx.fxml.FXML
-    public void addBtnOnAction(ActionEvent actionEvent)
-    {
-       // String productName, String productType, int productID, int productQuantity, double productPrice, String productStatus
+    public void addBtnOnAction(ActionEvent actionEvent) throws IOException {
 
         Product newProduct = new Product(
                 productNameTextField.getText(),
@@ -231,44 +238,46 @@ public class ManageProductsController {
                 Integer.parseInt(productIdTextField.getText()),
                 Integer.parseInt(quanityTextFieldForManageProducts.getText()),
                 Double.parseDouble(priceTextFieldForManageProduct.getText()),
-                productStatusComboBoxField.getValue()
-
-
+                productStatusComboBoxField.getValue(),
+                imgPath
         );
         productList.add(newProduct);
-        try
-        {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("Text.txt"));
-            for(Product products: productList)
-            {
-                bw.write(products.getProductName() + "," + products.getProductID() + ","+ products.getProductQuantity()+","+products.getProductQuantity()+","+products.getProductPrice()+","+products.getProductType()+","+products.getProductStatus() + "\n");
+        Product proList = new Product(imgPath, productNameTextField.getText(), Double.parseDouble(priceTextFieldForManageProduct.getText()), Integer.parseInt(quanityTextFieldForManageProducts.getText()));
+        ProductData.addProduct(proList);
 
-            }
-            bw.close();
-        }
-        catch (IOException e)
-        {
-            throw new RuntimeException(e);
-        }
+
+        FileOutputStream fos = new FileOutputStream("ProductInfo.bin");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(productList);
+        oos.close();
+
+        System.out.println(productList);
+
 
     }
 
+
+
+
     @javafx.fxml.FXML
-    public void imgImportBtnOnAction(ActionEvent actionEvent)
+    public void imgImportBtnOnAction(ActionEvent actionEvent)throws IOException
     {
+
         FileChooser openFile = new FileChooser();
         openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg","*JPEG"));
         File file = openFile.showOpenDialog(imgAnchorPanBox.getScene().getWindow());
         if(file != null)
         {
 
-            img = new Image(file.toURI().toString(),106,122,false,true);
-
-            imgViewContainer.setImage(img);
-            images.add(img);
-             
-
+            imgViewContainer.setImage(new Image(file.toURI().toString(), 106,122,false,true ));
+            imgPath = file.toURI().toString();
 
         }
+        else
+        {
+            imgErrorMessege.setText("No Image is Selected");
+        }
+
+
     }
 }

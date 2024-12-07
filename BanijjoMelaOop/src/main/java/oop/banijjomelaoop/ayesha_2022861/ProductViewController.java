@@ -1,18 +1,73 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import jdk.internal.org.objectweb.asm.util.TraceClassVisitor;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ProductViewController
 {
+
+    private ObservableList<Product>productForView;
+
+    private ArrayList<Product> productList;
     @javafx.fxml.FXML
-    private Tab productTab;
-    @javafx.fxml.FXML
-    private TabPane customerTabpane;
+    private FlowPane productContainer;
+
 
     @javafx.fxml.FXML
-    public void initialize() {
+    public void initialize()
+    {
+        List<Product> products = ProductData.getProducts();
+        for(Product p: products)
+        {
+            VBox dataContainer = createProductCard(p);
+            productContainer.getChildren().add(dataContainer);
+        }
+    }
+
+    private VBox createProductCard(Product p)
+    {
+        //Box
+        VBox newBox = new VBox(20);
+        newBox.setStyle("-fx-border-color: #ddd; -fx-border-width: 1; -fx-padding: 10; -fx-background-color: #f9f9f9; -fx-border-radius: 5; -fx-background-radius: 5;");
+        newBox.setPrefWidth(100);
+        newBox.setMaxWidth(100);
+
+        //Image
+        ImageView imgView = new ImageView();
+        if (p.getImgPath() != null )
+        {
+            String imagePath = p.getImgPath();
+            imgView.setImage(new Image(imagePath));
+        }
+        imgView.setFitWidth(80);
+        imgView.setFitHeight(80);
+        imgView.setPreserveRatio(true);
+
+        //Name label
+        Label name = new Label("Name : "+ p.getProductName());
+//        Price Label
+
+        Label price = new Label(String.format("Price : " + String.valueOf(p.getProductPrice())));
+
+        newBox.getChildren().addAll(imgView,name,price);
+        return newBox;
+
     }
 
     @javafx.fxml.FXML
@@ -140,4 +195,6 @@ public class ProductViewController
 
         }
     }
+
+
 }

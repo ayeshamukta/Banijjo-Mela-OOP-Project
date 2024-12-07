@@ -46,14 +46,15 @@
                         <TextField fx:id="quanityTextFieldForManageProducts" layoutX="379.0" layoutY="69.0" />
                         <AnchorPane fx:id="imgAnchorPanBox" layoutX="552.0" layoutY="20.0" prefHeight="104.0" prefWidth="108.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;">
                            <children>
-                              <ImageView fx:id="imgViewContainer" fitHeight="122.0" fitWidth="106.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgViewContainer" fitHeight="101.0" fitWidth="106.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
-                        <Button layoutX="581.0" layoutY="152.0" mnemonicParsing="false" onAction="#imgImportBtnOnAction" text="Import" />
+                        <Button layoutX="584.0" layoutY="159.0" mnemonicParsing="false" onAction="#imgImportBtnOnAction" text="Import" />
                         <Label layoutX="16.0" layoutY="106.0" text="Product Type :" />
                         <ComboBox fx:id="productTypeComboBoxField" layoutX="118.0" layoutY="102.0" prefWidth="150.0" />
                         <Label layoutX="319.0" layoutY="106.0" text="Status :" />
                         <ComboBox fx:id="productStatusComboBoxField" layoutX="378.0" layoutY="102.0" prefWidth="150.0" />
+                        <Label fx:id="imgErrorMessege" layoutX="552.0" layoutY="134.0" prefHeight="18.0" prefWidth="115.0" />
                      </children>
                   </AnchorPane>
                </content>
