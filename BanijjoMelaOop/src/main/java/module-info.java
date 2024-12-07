@@ -9,5 +9,7 @@ module oop.banijjomelaoop {
 
     exports oop.banijjomelaoop;
     exports oop.banijjomelaoop.ayesha_2022861;
+    exports oop.banijjomelaoop.Jinia_2021275;
+    opens oop.banijjomelaoop.Jinia_2021275 to javafx.fxml;
 
 }
