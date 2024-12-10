@@ -2,10 +2,7 @@ package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -21,7 +18,7 @@ import java.util.List;
 
 public class ProductViewController
 {
-
+    private List<Product> cartItems = new ArrayList<>();
     private ObservableList<Product>productForView;
 
     private ArrayList<Product> productList;
@@ -38,10 +35,15 @@ public class ProductViewController
             VBox dataContainer = createProductCard(p);
             productContainer.getChildren().add(dataContainer);
         }
+
+
+
     }
 
     private VBox createProductCard(Product p)
     {
+        List<Product> cartItem = new ArrayList<>();
+
         //Box
         VBox newBox = new VBox(20);
         newBox.setStyle("-fx-border-color: #ddd; -fx-border-width: 1; -fx-padding: 10; -fx-background-color: #f9f9f9; -fx-border-radius: 5; -fx-background-radius: 5;");
@@ -63,9 +65,22 @@ public class ProductViewController
         Label name = new Label("Name : "+ p.getProductName());
 //        Price Label
 
-        Label price = new Label(String.format("Price : " + String.valueOf(p.getProductPrice())));
+        //        spinner
+        Spinner<Integer> spinner = new Spinner<>();
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100);
+        spinner.setValueFactory(valueFactory);
+        spinner.setLayoutX(50);
+        spinner.setPrefWidth(120);
 
-        newBox.getChildren().addAll(imgView,name,price);
+        Label price = new Label(String.format("Price : " + String.valueOf(p.getProductPrice())));
+//        button
+        Button btn = new Button("Add to Cart");
+        btn.setOnAction(actionEvent -> CartViewController.addToCart(p.getProductName(),p.getProductID(),spinner.getValue(), p.getProductPrice()));
+
+
+
+
+        newBox.getChildren().addAll(imgView,name,price,btn,spinner);
         return newBox;
 
     }

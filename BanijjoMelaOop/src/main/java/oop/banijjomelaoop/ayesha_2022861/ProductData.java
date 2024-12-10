@@ -2,6 +2,9 @@ package oop.banijjomelaoop.ayesha_2022861;
 
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +13,7 @@ public class ProductData
 {
     private static List<Product> products = new ArrayList<>();
     private static final String dataFile = "Product.dat";
+
 
     static
     {
@@ -41,7 +45,7 @@ public class ProductData
 
    }
 
-   private static void loadProducts()
+   private static ObservableList<Product> loadProducts()
    {
 
        try {
@@ -53,8 +57,23 @@ public class ProductData
 
        }
 
-
+       return FXCollections.observableArrayList();
    }
 
+//    table view save data
+    public static ObservableList<Product> loadTableData()
+    {
+        try
+        {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFile));
+            List<Product> proList = (List<Product>) ois.readObject();
+            return FXCollections.observableArrayList(proList);
+        }
+        catch (IOException | ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        return FXCollections.observableArrayList();
+    }
 
 }

@@ -1,6 +1,7 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +14,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import oop.banijjomelaoop.MainApplication;
 
-import javax.swing.*;
-import java.awt.image.BufferedImage;
+
 import java.io.*;
 import java.security.cert.Extension;
 import java.time.LocalDate;
@@ -61,11 +62,16 @@ public class ManageProductsController  {
 
     public ArrayList<Product> productList = new ArrayList<>();
 
+    public void setProductList(ArrayList<Product> productList) {
+        this.productList = productList;
+    }
 
     @javafx.fxml.FXML
     private Label imgErrorMessege;
     @javafx.fxml.FXML
     private ImageView imgViewContainer;
+
+
 
     public ArrayList<Product> getProductList() {
         return productList;
@@ -89,7 +95,8 @@ public class ManageProductsController  {
         productTypeComboBoxField.getItems().addAll("Food", "Clothing", " Cosmetics", "Stationary", "Footwear");
         productStatusComboBoxField.getItems().addAll("Available", "Unavailable","Up Coming");
 
-
+        loadController();
+//        System.out.println(productTable);
 
     }
 
@@ -244,14 +251,18 @@ public class ManageProductsController  {
         productList.add(newProduct);
         Product proList = new Product(imgPath, productNameTextField.getText(), Double.parseDouble(priceTextFieldForManageProduct.getText()), Integer.parseInt(quanityTextFieldForManageProducts.getText()));
         ProductData.addProduct(proList);
-
+        ObservableList<Product> productTable = FXCollections.observableArrayList(newProduct);
+        productsTableView.setItems(productTable);
+        ProductData.loadTableData();
 
         FileOutputStream fos = new FileOutputStream("ProductInfo.bin");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(productList);
         oos.close();
 
-        System.out.println(productList);
+//        System.out.println(productList);
+
+
 
 
     }
@@ -280,4 +291,24 @@ public class ManageProductsController  {
 
 
     }
+
+
+     void loadController()
+    {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
+            CartViewController cc = loader.getController();
+            cc.setProductList(productList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+
+
+
+
+
 }

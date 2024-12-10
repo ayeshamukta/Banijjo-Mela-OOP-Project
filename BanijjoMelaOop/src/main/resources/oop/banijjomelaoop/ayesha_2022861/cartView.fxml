@@ -26,11 +26,11 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="498.0">
                      <children>
-                        <TableView layoutX="1.0" prefHeight="128.0" prefWidth="498.0">
+                        <TableView fx:id="tableviewCart" layoutX="1.0" prefHeight="128.0" prefWidth="546.0">
                            <columns>
-                              <TableColumn prefWidth="174.3999481201172" text="Poduct Name" />
-                              <TableColumn prefWidth="171.20001220703125" text=" Quantity" />
-                              <TableColumn prefWidth="152.79998779296875" text="Price" />
+                              <TableColumn fx:id="proNameTableCol" prefWidth="212.79998779296875" text="Poduct Name" />
+                              <TableColumn fx:id="quanTableCol" prefWidth="154.39993286132812" text=" Quantity" />
+                              <TableColumn fx:id="priceTableCol" prefWidth="176.79998779296875" text="Price" />
                            </columns>
                         </TableView>
                         <Label alignment="CENTER" layoutY="128.0" prefHeight="18.0" prefWidth="333.0" style="-fx-background-color: #ffffff;" text="Total Amount">
@@ -38,8 +38,8 @@
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="328.0" layoutY="129.0" prefHeight="18.0" prefWidth="172.0" style="-fx-background-color: #FFF1DC;" text="0" />
-                        <Label layoutX="274.0" layoutY="159.0" prefHeight="20.0" prefWidth="142.0" text=" Shipping Address">
+                        <Label fx:id="totalBillLabel" alignment="CENTER" layoutX="356.0" layoutY="129.0" prefHeight="18.0" prefWidth="196.0" style="-fx-background-color: #FFF1DC;" text="0" />
+                        <Label layoutX="298.0" layoutY="157.0" prefHeight="20.0" prefWidth="142.0" text=" Shipping Address">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -50,24 +50,25 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="100.0" layoutY="191.0" prefHeight="26.0" prefWidth="102.0" />
+                        <TextField fx:id="customerNameTextField" layoutX="100.0" layoutY="191.0" prefHeight="26.0" prefWidth="102.0" />
                         <Label layoutX="10.0" layoutY="230.0" text="Phn Number :" />
-                        <TextField layoutX="100.0" layoutY="226.0" prefHeight="26.0" prefWidth="102.0" />
-                        <Line endX="-3.60003662109375" endY="59.20001220703125" layoutX="249.0" layoutY="204.0" startX="-3.60003662109375" startY="-40.00001525878906" />
-                        <Label layoutX="274.0" layoutY="195.0" prefHeight="18.0" prefWidth="91.0" text="District :" />
-                        <Label layoutX="276.0" layoutY="230.0" prefHeight="18.0" prefWidth="52.0" text="Address :" />
-                        <TextField layoutX="339.0" layoutY="225.0" prefHeight="26.0" prefWidth="146.0" promptText="House no./road nnum./area//postalcode" />
-                        <ComboBox layoutX="339.0" layoutY="190.0" prefHeight="26.0" prefWidth="146.0" />
+                        <TextField fx:id="cusPhnNumTextField" layoutX="100.0" layoutY="226.0" prefHeight="26.0" prefWidth="102.0" />
+                        <Line endX="-3.60003662109375" endY="59.20001220703125" layoutX="259.0" layoutY="201.0" startX="-3.60003662109375" startY="-40.00001525878906" />
+                        <Label layoutX="298.0" layoutY="193.0" prefHeight="18.0" prefWidth="91.0" text="Division :" />
+                        <Label layoutX="300.0" layoutY="228.0" prefHeight="18.0" prefWidth="52.0" text="Address :" />
+                        <TextField fx:id="cusAddressTextField" layoutX="363.0" layoutY="224.0" prefHeight="26.0" prefWidth="146.0" promptText="House no./road nnum./area//postalcode" />
+                        <ComboBox fx:id="cusDivisionComboBox" layoutX="363.0" layoutY="188.0" prefHeight="26.0" prefWidth="146.0" />
                         <Label layoutX="14.0" layoutY="264.0" prefHeight="18.0" prefWidth="142.0" text="Choose Payment Option :" />
-                        <RadioButton layoutX="169.0" layoutY="265.0" mnemonicParsing="false" text="Mobile Banking" />
-                        <RadioButton layoutX="302.0" layoutY="265.0" mnemonicParsing="false" text="SSL COMMERZ" />
-                        <RadioButton layoutX="425.0" layoutY="264.0" mnemonicParsing="false" text="COD" />
+                        <RadioButton fx:id="mobileBankingRadioBtn" layoutX="169.0" layoutY="265.0" mnemonicParsing="false" text="Mobile Banking" />
+                        <RadioButton fx:id="sslCommerzRadioBtn" layoutX="302.0" layoutY="265.0" mnemonicParsing="false" text="SSL COMMERZ" />
+                        <RadioButton fx:id="codRadioBtn" layoutX="425.0" layoutY="264.0" mnemonicParsing="false" text="COD" />
                         <Label alignment="CENTER" layoutX="7.0" layoutY="292.0" prefHeight="26.0" prefWidth="306.0" wrapText="true">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button layoutX="342.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="144.0" text="Confirm Purchase" />
+                        <Button layoutX="367.0" layoutY="292.0" mnemonicParsing="false" onAction="#puchaseConfirmatoinBtn" prefHeight="26.0" prefWidth="146.0" text="Confirm Purchase" />
+                        <Label fx:id="errorAlertLabelText" alignment="CENTER" layoutX="17.0" layoutY="297.0" prefHeight="26.0" prefWidth="336.0" />
                      </children>
                   </AnchorPane>
                </content>

@@ -10,6 +10,7 @@ public class Product implements Serializable
     private String productStatus;
     private String imgPath;
 
+
     public String getProductName() {
         return productName;
     }
@@ -64,6 +65,13 @@ public class Product implements Serializable
 
     public void setImgPath(String imgPath) {
         this.imgPath = imgPath;
+    }
+
+    public Product(String productName, double productPrice, int productQuantity) {
+
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
     }
 
     public Product(String productName, String productType, int productID, int productQuantity, double productPrice, String productStatus, String imgPath) {
