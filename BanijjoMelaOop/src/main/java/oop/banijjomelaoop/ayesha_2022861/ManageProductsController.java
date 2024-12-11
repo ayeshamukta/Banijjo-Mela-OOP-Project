@@ -95,7 +95,7 @@ public class ManageProductsController  {
         productTypeComboBoxField.getItems().addAll("Food", "Clothing", " Cosmetics", "Stationary", "Footwear");
         productStatusComboBoxField.getItems().addAll("Available", "Unavailable","Up Coming");
 
-        loadController();
+//        loadController();
 //        System.out.println(productTable);
 
     }
@@ -263,7 +263,9 @@ public class ManageProductsController  {
 //        System.out.println(productList);
 
 
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
+        CartViewController controller = loader.getController();
+        controller.setProductList(productList);
 
     }
 
@@ -293,17 +295,17 @@ public class ManageProductsController  {
     }
 
 
-     void loadController()
-    {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
-            CartViewController cc = loader.getController();
-            cc.setProductList(productList);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-    }
+//     void loadController()
+//    {
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
+//            CartViewController cc = loader.getController();
+//            cc.setProductList(productList);
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//    }
 
 
 

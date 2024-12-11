@@ -18,10 +18,10 @@ import java.util.List;
 
 public class ProductViewController
 {
-    private List<Product> cartItems = new ArrayList<>();
-    private ObservableList<Product>productForView;
-
-    private ArrayList<Product> productList;
+//    private List<Product> cartItems = new ArrayList<>();
+//    private ObservableList<Product>productForView;
+//
+//    private ArrayList<Product> productList;
     @javafx.fxml.FXML
     private FlowPane productContainer;
 

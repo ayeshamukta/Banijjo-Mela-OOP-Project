@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -25,24 +23,6 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <AnchorPane layoutX="277.0" layoutY="16.0" prefHeight="298.0" prefWidth="475.0" style="-fx-background-color: #FFFFFF;">
-                           <children>
-                              <TableView fx:id="registerStallTable" layoutX="7.0" layoutY="56.0" prefHeight="226.0" prefWidth="658.0">
-                                 <columns>
-                                    <TableColumn fx:id="stallNumColoumn" prefWidth="89.60003662109375" text="Stall Number" />
-                                    <TableColumn fx:id="stallRowColoumn" prefWidth="87.199951171875" text="Stall Row" />
-                                    <TableColumn fx:id="ownerNameColoumn" prefWidth="156.0" text="Owner Name" />
-                                    <TableColumn fx:id="durationColoumn" prefWidth="148.0" text="Duration" />
-                                    <TableColumn fx:id="businessCatagoryTableColoumn" prefWidth="176.79998779296875" text="Buisness Category" />
-                                 </columns>
-                              </TableView>
-                              <Label alignment="CENTER" layoutX="-2.0" layoutY="21.0" prefHeight="27.0" prefWidth="684.0" text="Registered Stall">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
                         <Label layoutX="14.0" layoutY="67.0" text="Stall Number :">
                            <font>
                               <Font size="14.0" />
@@ -54,9 +34,7 @@
                            </font>
                         </Label>
 <!--                        <Button layoutX="153.0" layoutY="191.0" mnemonicParsing="false" onAction="#registerOnAction" prefHeight="26.0" prefWidth="99.0" text="Register" />-->
-                        <Label fx:id="registerErrorLabelField" layoutX="28.0" layoutY="231.0" prefHeight="81.0" prefWidth="200.0" />
-<!--                        <Button layoutX="13.0" layoutY="191.0" mnemonicParsing="false" onAction="#checkAvailibilityOnAction" prefHeight="26.0" prefWidth="115.0" text="Check Availibility" />-->
-                        <Label fx:id="registerTabErrorMessage" layoutX="28.0" layoutY="278.0" prefHeight="49.0" prefWidth="200.0" />
+                        <Label fx:id="registerErrorLabelField" layoutX="28.0" layoutY="271.0" prefHeight="42.0" prefWidth="231.0" />
                         <Label layoutX="13.0" layoutY="143.0" text="Owner Name :">
                            <font>
                               <Font size="14.0" />
@@ -72,6 +50,8 @@
                            </font>
                         </Label>
                         <Button layoutX="178.0" layoutY="231.0" mnemonicParsing="false" onAction="#registerOnActionForStall" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #517891;" text="Register" textFill="WHITE" />
+                        <Label fx:id="dataViewLabelField" layoutX="285.0" layoutY="18.0" prefHeight="306.0" prefWidth="659.0" />
+                        <Button layoutX="54.0" layoutY="231.0" mnemonicParsing="false" onAction="#loadInfoBtn" text="Load Data" />
                      </children>
                   </AnchorPane>
                </content>
@@ -80,7 +60,7 @@
       </TabPane>
       <AnchorPane layoutX="231.0" prefHeight="54.0" prefWidth="648.0">
          <children>
-            <Label alignment="CENTER" layoutY="-1.0" prefHeight="58.0" prefWidth="954.0" style="-fx-background-color: #2F4F4F;" text="Register Stall" textFill="WHITE">
+            <Label alignment="CENTER" layoutY="-1.0" prefHeight="58.0" prefWidth="963.0" style="-fx-background-color: #2F4F4F;" text="Register Stall" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

@@ -2,9 +2,6 @@ package oop.banijjomelaoop.ayesha_2022861;
 
 
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,41 +36,43 @@ public class ProductData
        try {
            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(dataFile));
            oos.writeObject(products);
+           oos.close();
        } catch (IOException e) {
            throw new RuntimeException(e);
        }
 
    }
 
-   private static ObservableList<Product> loadProducts()
+   private static void loadProducts()
+
    {
 
        try {
            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFile));
            products = (List<Product>) ois.readObject();
+
        } catch (IOException | ClassNotFoundException e)
        {
            products = new ArrayList<>();
 
        }
 
-       return FXCollections.observableArrayList();
    }
 
 //    table view save data
-    public static ObservableList<Product> loadTableData()
+    public static void loadTableData()
+
     {
         try
         {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFile));
             List<Product> proList = (List<Product>) ois.readObject();
-            return FXCollections.observableArrayList(proList);
+//            return FXCollections.observableArrayList(proList);
         }
         catch (IOException | ClassNotFoundException e)
         {
             e.printStackTrace();
         }
-        return FXCollections.observableArrayList();
     }
 
 }

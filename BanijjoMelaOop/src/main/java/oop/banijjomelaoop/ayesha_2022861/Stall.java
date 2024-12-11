@@ -2,9 +2,10 @@ package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.collections.ObservableList;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Stall
+public class Stall implements Serializable
 {
     private int stallNum,stallRow;
     private String ownerName, businessCategory, slots;
@@ -53,22 +54,20 @@ public class Stall
     public Stall() {
     }
 
-    public Stall(int stallNum, int stallRow, String ownerName, String businessCategory, String slots) {
+    public Stall(int stallNum, int stallRow, String ownerName,  String slots, String businessCategory) {
         this.stallNum = stallNum;
         this.stallRow = stallRow;
         this.ownerName = ownerName;
-        this.businessCategory = businessCategory;
         this.slots = slots;
+        this.businessCategory = businessCategory;
+
     }
 
     @Override
     public String toString() {
-        return "Stall{" +
-                "stallNum=" + stallNum +
-                ", stallRow=" + stallRow +
-                ", ownerName='" + ownerName + '\'' +
-                ", businessCategory='" + businessCategory + '\'' +
-                ", slots='" + slots + '\'' +
-                '}';
+        return "Stall Number :"  + stallNum +  ", Stall Row :" + stallRow + ", Owner Name :" + ownerName + '\'' + ", Slots :" + slots + '\'' + ", Business Category :" + businessCategory + '\'' + "\n";
     }
 }
+
+
+

@@ -4,8 +4,8 @@ module oop.banijjomelaoop {
     requires java.desktop;
 
 
-    opens oop.banijjomelaoop to javafx.fxml;
-    opens oop.banijjomelaoop.ayesha_2022861 to javafx.fxml;
+    opens oop.banijjomelaoop to javafx.fxml , javafx.base;
+    opens oop.banijjomelaoop.ayesha_2022861 to javafx.fxml,javafx.base;
 
     exports oop.banijjomelaoop;
     exports oop.banijjomelaoop.ayesha_2022861;
