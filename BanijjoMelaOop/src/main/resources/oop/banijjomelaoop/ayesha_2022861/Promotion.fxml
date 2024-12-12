@@ -19,20 +19,21 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0" prefWidth="610.0">
                      <children>
-                        <ComboBox fx:id="prouctsComboBoxForPromotion" layoutX="95.0" layoutY="22.0" prefHeight="26.0" prefWidth="200.0" promptText="Choose Product" />
-                        <Label layoutX="15.0" layoutY="26.0" text="Products :" />
-                        <Label layoutX="14.0" layoutY="67.0" prefHeight="18.0" prefWidth="71.0" text="Disscount :" />
-                        <Label layoutX="15.0" layoutY="103.0" text="Promo Code :" />
-                        <Button layoutX="181.0" layoutY="146.0" mnemonicParsing="false" onAction="#updateButtonOnActionForPromotion" prefHeight="26.0" prefWidth="115.0" text="Update" />
-                        <TextField fx:id="promoCodeForPromotion" layoutX="96.0" layoutY="99.0" prefHeight="26.0" prefWidth="200.0" />
-                        <TextField fx:id="disscountTextFieldForPromotion" layoutX="96.0" layoutY="63.0" prefHeight="26.0" prefWidth="200.0" />
+                        <ComboBox fx:id="prouctsComboBoxForPromotion" layoutX="96.0" layoutY="89.0" prefHeight="26.0" prefWidth="200.0" promptText="Choose Product" />
+                        <Label layoutX="22.0" layoutY="93.0" text="Products :" />
+                        <Label layoutX="13.0" layoutY="148.0" prefHeight="18.0" prefWidth="71.0" text="Disscount :" />
+                        <Label layoutX="13.0" layoutY="204.0" text="Promo Code :" />
+                        <Button layoutX="179.0" layoutY="251.0" mnemonicParsing="false" onAction="#updateButtonOnActionForPromotion" prefHeight="26.0" prefWidth="115.0" text="Update" />
+                        <TextField fx:id="promoCodeForPromotion" layoutX="96.0" layoutY="200.0" prefHeight="26.0" prefWidth="200.0" />
+                        <TextField fx:id="disscountTextFieldForPromotion" layoutX="96.0" layoutY="144.0" prefHeight="26.0" prefWidth="200.0" />
                         <TableView fx:id="promotionTableView" layoutX="337.0" layoutY="21.0" prefHeight="293.0" prefWidth="322.0">
                            <columns>
-                              <TableColumn fx:id="productNameColoumnForPromotion" prefWidth="117.60003662109375" text="Product Name" />
+                              <TableColumn fx:id="productIdColoumnForPromotion" prefWidth="117.60003662109375" text="Product Name" />
                               <TableColumn fx:id="codeColoumnForPromotion" prefWidth="71.20001220703125" text="Code" />
                               <TableColumn fx:id="percentageColoumnForPromotion" prefWidth="133.59991455078125" text="Percentage / Amount" />
                            </columns>
                         </TableView>
+                        <Button layoutX="52.0" layoutY="251.0" mnemonicParsing="false" onAction="#loadproductForComboBox" text="Load Product" />
                      </children>
                   </AnchorPane>
                </content>

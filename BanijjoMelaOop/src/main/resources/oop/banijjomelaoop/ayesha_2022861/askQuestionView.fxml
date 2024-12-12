@@ -36,9 +36,9 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="113.0" layoutY="73.0" prefHeight="26.0" prefWidth="367.0" />
-                        <Button layoutX="412.0" layoutY="124.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" text="Ask" />
-                        <Label layoutX="39.0" layoutY="160.0" prefHeight="154.0" prefWidth="442.0" />
+                        <TextField fx:id="cusQuesTextField" layoutX="113.0" layoutY="73.0" prefHeight="26.0" prefWidth="367.0" />
+                        <Button layoutX="412.0" layoutY="124.0" mnemonicParsing="false" onAction="#askButtonOnAction" prefHeight="26.0" prefWidth="66.0" text="Ask" />
+                        <Label fx:id="answerCointainerLabelofcus" layoutX="39.0" layoutY="160.0" prefHeight="154.0" prefWidth="442.0" />
                      </children>
                   </AnchorPane>
                </content>

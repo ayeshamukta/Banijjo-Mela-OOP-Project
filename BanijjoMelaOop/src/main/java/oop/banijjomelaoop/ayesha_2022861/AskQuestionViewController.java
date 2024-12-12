@@ -1,8 +1,13 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 
 public class AskQuestionViewController
 {
@@ -10,6 +15,11 @@ public class AskQuestionViewController
     private TabPane customerTabpane;
     @javafx.fxml.FXML
     private Tab askQuestionTab;
+    @javafx.fxml.FXML
+    private Label answerCointainerLabelofcus;
+    @javafx.fxml.FXML
+    private TextField cusQuesTextField;
+    ObservableList<String > ques = FXCollections.observableArrayList();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -139,5 +149,16 @@ public class AskQuestionViewController
     {
 
     }
+    }
+
+
+    @javafx.fxml.FXML
+    public void askButtonOnAction(ActionEvent actionEvent)
+    {
+        ques.add(cusQuesTextField.getText());
+        for(String str : ques)
+        {
+            answerCointainerLabelofcus.setText(str);
+        }
     }
 }

@@ -22,7 +22,7 @@ import java.security.cert.Extension;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ManageProductsController  {
+public class ManageProductsController implements Serializable {
     @javafx.fxml.FXML
     private TextField quanityTextFieldForManageProducts;
     @javafx.fxml.FXML
@@ -77,10 +77,12 @@ public class ManageProductsController  {
         return productList;
     }
 
+
     @javafx.fxml.FXML
     public void initialize()
     {
         productList = new ArrayList<Product>();
+
 
         productNameColoumnForManageProducts.setCellValueFactory(new PropertyValueFactory<>("productName"));
         productIDColoumForManageProducts.setCellValueFactory(new PropertyValueFactory<>("productID"));
@@ -255,6 +257,7 @@ public class ManageProductsController  {
         productsTableView.setItems(productTable);
         ProductData.loadTableData();
 
+
         FileOutputStream fos = new FileOutputStream("ProductInfo.bin");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(productList);
@@ -263,9 +266,35 @@ public class ManageProductsController  {
 //        System.out.println(productList);
 
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
-        CartViewController controller = loader.getController();
-        controller.setProductList(productList);
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
+//        CartViewController controller = loader.getController();
+//        controller.setProductList(productList);
+
+//        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/Promotion.fxml"));
+//        Parent root = loader1.load();
+//        PromotionController pc = loader1.getController();
+
+        String pIdLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\id.bin";
+        File f = new File(pIdLocation);
+        if(!f.exists())
+        {
+            System.out.println("File doesn't exist");
+        }
+        try {
+            String proId = productIdTextField.getText();
+            ObjectOutputStream idoos = new ObjectOutputStream(new FileOutputStream(pIdLocation));
+            idoos.writeObject(proId);
+            idoos.close();
+
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+
+
+
 
     }
 
@@ -295,17 +324,8 @@ public class ManageProductsController  {
     }
 
 
-//     void loadController()
-//    {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
-//            CartViewController cc = loader.getController();
-//            cc.setProductList(productList);
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//    }
+
+
 
 
 

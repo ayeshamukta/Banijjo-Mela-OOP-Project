@@ -108,4 +108,8 @@ public class Product implements Serializable
         this.productPrice = productPrice;
         this.imgPath = imgPath;
     }
+
+    public Product(int productID) {
+        this.productID = productID;
+    }
 }

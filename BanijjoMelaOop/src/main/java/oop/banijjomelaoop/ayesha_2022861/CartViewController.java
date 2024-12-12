@@ -41,13 +41,14 @@ public class CartViewController
     private Tab cartTab;
     @javafx.fxml.FXML
     private RadioButton mobileBankingRadioBtn;
-
+    Integer orderId = 000000;
 
    public ArrayList<Product> productList;
    public static   ObservableList<CartItem> cartItem = FXCollections.observableArrayList();
 
     public void setProductList(ArrayList<Product> productList) {
         this.productList = productList;
+
 
 
     }
@@ -197,6 +198,8 @@ public class CartViewController
 
     @javafx.fxml.FXML
     public void puchaseConfirmatoinBtn(ActionEvent actionEvent) {
+        orderId = orderId+1;
+
     }
     public static void addToCart(String proName,Integer proId, Integer proQuan, double proPrice)
     {

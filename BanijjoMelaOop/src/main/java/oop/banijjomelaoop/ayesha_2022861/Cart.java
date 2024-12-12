@@ -49,7 +49,11 @@ public class Cart
         this.phnNum = phnNum;
     }
 
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
 
-
-
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
 }
