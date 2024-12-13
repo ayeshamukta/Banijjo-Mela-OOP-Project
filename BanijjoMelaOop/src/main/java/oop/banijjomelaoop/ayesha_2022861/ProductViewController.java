@@ -73,14 +73,18 @@ public class ProductViewController
         spinner.setPrefWidth(120);
 
         Label price = new Label(String.format("Price : " + String.valueOf(p.getProductPrice())));
-//        button
+//        button add to cart
         Button btn = new Button("Add to Cart");
         btn.setOnAction(actionEvent -> CartViewController.addToCart(p.getProductName(),p.getProductID(),spinner.getValue(), p.getProductPrice()));
 
 
+// button wishlist
+        Button wishlistBtn = new Button("Wish List");
+        wishlistBtn.setOnAction(actionEvent -> WishlistViewController.loadWishList(p.getProductName(),p.getProductPrice(),p.getProductID()));
 
 
-        newBox.getChildren().addAll(imgView,name,price,btn,spinner);
+
+        newBox.getChildren().addAll(imgView,name,price,btn,wishlistBtn,spinner);
         return newBox;
 
     }

@@ -9,6 +9,9 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 
+import java.io.*;
+import java.util.ArrayList;
+
 public class AskQuestionViewController
 {
     @javafx.fxml.FXML
@@ -19,10 +22,24 @@ public class AskQuestionViewController
     private Label answerCointainerLabelofcus;
     @javafx.fxml.FXML
     private TextField cusQuesTextField;
-    ObservableList<String > ques = FXCollections.observableArrayList();
+    ArrayList<String> questions;
+
 
     @javafx.fxml.FXML
     public void initialize() {
+
+
+            questions = new ArrayList<>();
+            String file = "queries.bin";
+            if (new File(file).exists()) {
+                try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+                    questions = (ArrayList<String>) ois.readObject();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+
     }
 
     @javafx.fxml.FXML
@@ -153,12 +170,42 @@ public class AskQuestionViewController
 
 
     @javafx.fxml.FXML
-    public void askButtonOnAction(ActionEvent actionEvent)
-    {
-        ques.add(cusQuesTextField.getText());
-        for(String str : ques)
-        {
-            answerCointainerLabelofcus.setText(str);
+
+    public void askButtonOnAction(ActionEvent actionEvent) {
+        String str = cusQuesTextField.getText();
+        if (!str.isEmpty()) {
+            questions.add(str);
+            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("queries.bin"))) {
+                oos.writeObject(questions);
+                answerCointainerLabelofcus.setText("Question saved successfully!");
+            } catch (IOException e) {
+                e.printStackTrace();
+                answerCointainerLabelofcus.setText("Failed to save the question.");
+            }
+        } else {
+            answerCointainerLabelofcus.setText("Please enter a question.");
         }
     }
+
+    @javafx.fxml.FXML
+    public void loadQueryBTN(ActionEvent actionEvent) {
+        String file = "queries.bin";
+        File f = new File(file);
+        if (f.exists()) {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+                questions = (ArrayList<String>) ois.readObject();
+                answerCointainerLabelofcus.setText(String.join("\n ", questions));
+//                answerCointainerLabelofcus.setText(questions.toString(s));
+            } catch (Exception e) {
+                e.printStackTrace();
+                answerCointainerLabelofcus.setText("Failed to load questions.");
+            }
+        } else {
+            answerCointainerLabelofcus.setText("No questions found.");
+        }
+    }
+
+
+
+
 }
