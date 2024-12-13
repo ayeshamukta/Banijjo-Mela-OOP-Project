@@ -5,8 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -20,13 +18,6 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="574.0">
                      <children>
                         <Label layoutX="15.0" layoutY="260.0" prefHeight="42.0" prefWidth="278.0" />
-                        <TableView fx:id="inventoryTableView" layoutX="324.0" layoutY="77.0" prefHeight="200.0" prefWidth="315.0">
-                           <columns>
-                              <TableColumn fx:id="productNameColForManageInventory" prefWidth="100.00006103515625" text="Product Name" />
-                              <TableColumn fx:id="proIdColForManageInventory" prefWidth="102.4000244140625" text="Product ID " />
-                              <TableColumn fx:id="quantityColForManageInventory" prefWidth="102.4000244140625" text="Quantity" />
-                           </columns>
-                        </TableView>
                         <TextField fx:id="enterValueTextFieldForManageInventory" layoutX="141.0" layoutY="165.0" />
                         <Label layoutX="25.0" layoutY="169.0" text="Enter Value :" />
                         <Label layoutX="25.0" layoutY="83.0" text="Product Id :" />
@@ -34,6 +25,7 @@
                         <Button layoutX="188.0" layoutY="222.0" mnemonicParsing="false" onAction="#updateBtnOnActionlForManageInventory" prefHeight="26.0" prefWidth="98.0" text="Update" />
                         <Label layoutX="22.0" layoutY="124.0" prefHeight="18.0" prefWidth="107.0" text="Editable Coloumn :" />
                         <ComboBox fx:id="ediableComboBoxForManageInventory" layoutX="140.0" layoutY="121.0" prefWidth="150.0" />
+                        <Label fx:id="inventoryListLabel" layoutX="326.0" layoutY="25.0" prefHeight="304.0" prefWidth="332.0" />
                      </children>
                   </AnchorPane>
                </content>

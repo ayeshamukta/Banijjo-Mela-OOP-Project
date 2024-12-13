@@ -1,27 +1,86 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+import java.awt.*;
+import java.io.*;
+import java.util.ArrayList;
+
 
 public class ManageInventoryController {
     @javafx.fxml.FXML
-    private ComboBox ediableComboBoxForManageInventory;
+    private ComboBox<String> ediableComboBoxForManageInventory;
     @javafx.fxml.FXML
     private Tab manageInventoryTab;
     @javafx.fxml.FXML
-    private ComboBox productIdComboBoxForManageInventory;
-    @javafx.fxml.FXML
-    private TableColumn quantityColForManageInventory;
+    private ComboBox<Integer> productIdComboBoxForManageInventory;
     @javafx.fxml.FXML
     private TextField enterValueTextFieldForManageInventory;
     @javafx.fxml.FXML
-    private TableColumn productNameColForManageInventory;
-    @javafx.fxml.FXML
-    private TableColumn proIdColForManageInventory;
-    @javafx.fxml.FXML
-    private TableView inventoryTableView;
-    @javafx.fxml.FXML
     private TabPane stallownerTab;
+    @javafx.fxml.FXML
+    private Label inventoryListLabel;
+
+    ArrayList<Product> prolist;
+
+    public void initialize()
+    {
+        prolist = new ArrayList<>();
+
+        String pIdLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\id.bin";
+        File f = new File(pIdLocation);
+
+        if(f.exists())
+        {
+            try {
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pIdLocation));
+
+                String id = (String) ois.readObject();
+                ois.close();
+                Integer prodictID = Integer.valueOf(id);
+                productIdComboBoxForManageInventory.getItems().add(prodictID);
+
+            } catch (IOException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+        else
+        {
+            System.out.println("Can't read the file");
+        }
+
+        ediableComboBoxForManageInventory.getItems().addAll("Product Name", "Quantity");
+
+
+        String fileLoacation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\ProductInfo.bin";
+        File file = new File(fileLoacation);
+
+        if(file.exists())
+        {
+            try {
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileLoacation));
+                prolist = (ArrayList<Product>) ois.readObject();
+                for(Product p: prolist)
+                {
+                    String str = "Name : " +p.getProductName()
+                            + " Product Id : " + p.getProductID() + " Quantity : " + p.getProductQuantity();
+                    inventoryListLabel.setText(str);
+                }
+                ois.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+
+    }
 
     @javafx.fxml.FXML
     public void salePerformanceOnActionButton(ActionEvent actionEvent)
@@ -153,6 +212,70 @@ public class ManageInventoryController {
 
 
     @javafx.fxml.FXML
-    public void updateBtnOnActionlForManageInventory(ActionEvent actionEvent) {
+    public void updateBtnOnActionlForManageInventory(ActionEvent actionEvent)
+    {
+        Integer pId = productIdComboBoxForManageInventory.getValue();
+        String editcol = ediableComboBoxForManageInventory.getValue();
+        String  val = enterValueTextFieldForManageInventory.getText();
+
+        String fileLoacation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\ProductInfo.bin";
+        File f = new File(fileLoacation);
+
+       try
+       {
+           ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileLoacation));
+           prolist = (ArrayList<Product>) ois.readObject();
+//           ArrayList<Product>
+           ois.close();
+
+
+           for(Product produts : prolist)
+           {
+               if(produts.getProductID() == pId)
+               {
+                   switch (editcol)
+                   {
+                       case "Product Name" :
+                           produts.setProductName(val);
+                           break;
+
+                       case "Quantity" :
+                           produts.setProductQuantity(Integer.parseInt(val));
+                           break;
+                   }
+                   break;
+               }
+           }
+
+           ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileLoacation));
+           oos.writeObject(prolist);
+           oos.close();
+
+           if(f.exists())
+           {
+               try {
+                   ObjectInputStream ois1 = new ObjectInputStream(new FileInputStream(fileLoacation));
+                   prolist = (ArrayList<Product>) ois1.readObject();
+                   for(Product p: prolist)
+                   {
+                       String str = "Name : " +p.getProductName()
+                               + " Product Id : " + p.getProductID() + " Quantity : " + p.getProductQuantity();
+                       inventoryListLabel.setText(str);
+                   }
+                   ois.close();
+               } catch (Exception e) {
+                   throw new RuntimeException(e);
+               }
+           }
+
+
+
+       } catch (IOException e) {
+           throw new RuntimeException(e);
+       } catch (ClassNotFoundException e) {
+           throw new RuntimeException(e);
+       }
+
+
     }
 }

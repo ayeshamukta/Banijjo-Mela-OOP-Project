@@ -30,14 +30,14 @@ public class AskQuestionViewController
 
 
             questions = new ArrayList<>();
-            String file = "queries.bin";
-            if (new File(file).exists()) {
-                try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-                    questions = (ArrayList<String>) ois.readObject();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+//            String file = "queries.bin";
+//            if (new File(file).exists()) {
+//                try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+//                    questions = (ArrayList<String>) ois.readObject();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
 
 
     }
