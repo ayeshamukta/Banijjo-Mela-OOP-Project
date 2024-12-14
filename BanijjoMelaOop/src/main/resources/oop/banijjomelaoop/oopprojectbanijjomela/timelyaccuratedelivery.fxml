@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ComboBox fx:id="schedulecombobox" layoutX="63.0" layoutY="44.0" prefWidth="150.0" />
+      <TextField fx:id="addressTextField" layoutX="341.0" layoutY="32.0" />
+      <TextField fx:id="timeTextFIELD" layoutX="365.0" layoutY="70.0" />
+      <Text layoutX="286.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="address" wrappingWidth="54.13677978515625" />
+      <Text layoutX="300.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" wrappingWidth="54.13677978515625" />
+      <Button layoutX="271.0" layoutY="146.0" mnemonicParsing="false" onAction="#submitButtonONclick" prefHeight="26.0" prefWidth="83.0" text="Submit" />
+      <TableView fx:id="timeAccuratelyTableView" layoutX="7.0" layoutY="173.0" prefHeight="200.0" prefWidth="585.0">
+        <columns>
+          <TableColumn fx:id="addresstablecol" prefWidth="126.4000244140625" text="Address" />
+          <TableColumn fx:id="timeTablecol" prefWidth="129.5999755859375" text="time" />
+            <TableColumn fx:id="descriptiontablecol" prefWidth="129.5999755859375" text="Description" />
+            <TableColumn fx:id="scheduletablecol" prefWidth="198.39998779296877" text="schedule" />
+        </columns>
+      </TableView>
+      <TextField fx:id="DESCRIPTIONtextfield" layoutX="143.0" layoutY="102.0" prefHeight="26.0" prefWidth="394.0" />
+      <Text layoutX="50.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="63.73675537109375" />
+   </children>
+</AnchorPane>

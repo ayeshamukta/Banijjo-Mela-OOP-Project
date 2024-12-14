@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="datePicker" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopprojectbanijjomela.CommunicateCustomerWithDeliveryTime">
+   <children>
+      <TextField fx:id="viewCustomerCommunicationTextField" layoutX="225.0" layoutY="25.0" />
+      <Text layoutX="47.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View customer communication" />
+      <Text layoutX="47.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send Delivery Time." />
+      <TextField fx:id="sendDeliveryTimetextField" layoutX="150.0" layoutY="80.0" />
+      <DatePicker layoutX="380.0" layoutY="47.0" />
+      <TextArea fx:id="resultArea" layoutX="36.0" layoutY="161.0" prefHeight="200.0" prefWidth="487.0" />
+   </children>
+</AnchorPane>

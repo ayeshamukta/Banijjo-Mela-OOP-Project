@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopprojectbanijjomela.ReturnItemToVendor">
+   <children>
+      <TextField fx:id="orderIdTextfield" layoutX="95.0" layoutY="30.0" />
+      <TextField fx:id="returnReasonTextfield" layoutX="349.0" layoutY="30.0" />
+      <Text layoutX="294.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Return Reason" wrappingWidth="54.136749267578125" />
+      <Text layoutX="40.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Id " wrappingWidth="54.136749267578125" />
+      <Text layoutX="40.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" wrappingWidth="54.136749267578125" />
+      <TextField fx:id="descriptionTextField" layoutX="95.0" layoutY="83.0" prefHeight="66.0" prefWidth="474.0" />
+      <TextArea fx:id="resultArea" layoutX="27.0" layoutY="223.0" prefHeight="149.0" prefWidth="551.0" />
+      <Button layoutX="332.0" layoutY="175.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
+   </children>
+</AnchorPane>
