@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopprojectbanijjomela.DeliveryStatusInRealTime">
+   <children>
+      <TextField fx:id="sendDeliveryTimeTextField" layoutX="128.0" layoutY="35.0" />
+      <TextField fx:id="viewCommunicationTextField" layoutX="409.0" layoutY="35.0" />
+      <Text layoutX="38.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="send delivery time:" wrappingWidth="78.13674926757812" />
+      <Text layoutX="315.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="view customer communication:" wrappingWidth="93.33676147460938" />
+      <TextArea fx:id="resultTextArea" layoutX="50.0" layoutY="166.0" prefHeight="162.0" prefWidth="523.0" />
+      <Text layoutX="38.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DeliveryMan Name" wrappingWidth="78.13674926757812" />
+      <TextField fx:id="deliveryMannameTextField" layoutX="128.0" layoutY="93.0" />
+      <Button layoutX="373.0" layoutY="111.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="26.0" prefWidth="78.0" text="Submit" />
+   </children>
+</AnchorPane>

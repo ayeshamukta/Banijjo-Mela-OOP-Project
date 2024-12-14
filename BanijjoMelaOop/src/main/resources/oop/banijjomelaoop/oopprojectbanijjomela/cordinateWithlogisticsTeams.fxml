@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oopprojectbanijjomela.CordinateWithlogisticsTeams">
+   <children>
+      <TextField fx:id="deliveryLocationTextField" layoutX="88.0" layoutY="23.0" />
+      <TextField fx:id="travelTimeTextField" layoutX="346.0" layoutY="24.0" />
+      <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery locations" wrappingWidth="64.53671264648438" />
+      <Text layoutX="268.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" travel time" wrappingWidth="64.53671264648438" />
+      <TextField fx:id="logisticsTeamNameTextField" layoutX="118.0" layoutY="74.0" />
+      <Text layoutX="65.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logistics name " wrappingWidth="64.53671264648438" />
+      <ComboBox fx:id="logisticsCombobox" layoutX="374.0" layoutY="75.0" prefWidth="150.0" />
+      <Text layoutX="300.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logistics support " wrappingWidth="64.53671264648438" />
+      <TextArea fx:id="resultArea" layoutX="24.0" layoutY="154.0" prefHeight="200.0" prefWidth="554.0" />
+      <Button layoutX="268.0" layoutY="115.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
+   </children>
+</AnchorPane>
