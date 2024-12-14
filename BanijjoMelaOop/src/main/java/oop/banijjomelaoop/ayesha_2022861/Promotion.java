@@ -41,6 +41,6 @@ public class Promotion implements Serializable {
 
     @Override
     public String toString() {
-        return id + " "+ disscount+ "%"  + " "+ code + '\n';
+        return "Product Id : "+ id+ "  "+ "Disscounted Amount : " + disscount+"%"+ "  " + "Promo Code : "+ code+"\n";
     }
 }

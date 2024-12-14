@@ -65,7 +65,7 @@ public class Stall implements Serializable
 
     @Override
     public String toString() {
-        return "Stall Number :"  + stallNum +  ", Stall Row :" + stallRow + ", Owner Name :" + ownerName + '\'' + ", Slots :" + slots + '\'' + ", Business Category :" + businessCategory + '\'' + "\n";
+        return "Stall Number :"  + stallNum +  ", Stall Row :" + stallRow + ", Owner Name : " + ownerName +  ", Slots :" + slots +  ", Business Category :" + businessCategory +  "\n";
     }
 }
 

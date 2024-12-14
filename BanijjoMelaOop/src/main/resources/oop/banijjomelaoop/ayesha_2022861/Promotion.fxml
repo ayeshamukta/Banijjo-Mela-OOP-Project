@@ -5,15 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="450.0" prefWidth="899.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.ayesha_2022861.PromotionController">
    <children>
-      <TabPane fx:id="stallownerTab" layoutX="238.0" layoutY="67.0" prefHeight="374.0" prefWidth="679.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="stallownerTab" layoutX="238.0" layoutY="67.0" prefHeight="374.0" prefWidth="706.0" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab fx:id="promotionTab" text="Promotion">
                <content>
@@ -26,14 +24,7 @@
                         <Button layoutX="179.0" layoutY="251.0" mnemonicParsing="false" onAction="#updateButtonOnActionForPromotion" prefHeight="26.0" prefWidth="115.0" text="Update" />
                         <TextField fx:id="promoCodeForPromotion" layoutX="96.0" layoutY="200.0" prefHeight="26.0" prefWidth="200.0" />
                         <TextField fx:id="disscountTextFieldForPromotion" layoutX="96.0" layoutY="144.0" prefHeight="26.0" prefWidth="200.0" />
-                        <TableView fx:id="promotionTableView" layoutX="337.0" layoutY="21.0" prefHeight="293.0" prefWidth="322.0">
-                           <columns>
-                              <TableColumn fx:id="productIdColoumnForPromotion" prefWidth="117.60003662109375" text="Product Id" />
-                              <TableColumn fx:id="codeColoumnForPromotion" prefWidth="71.20001220703125" text="Code" />
-                              <TableColumn fx:id="percentageColoumnForPromotion" prefWidth="133.59991455078125" text="Percentage / Amount" />
-                           </columns>
-                        </TableView>
-                        <Button layoutX="52.0" layoutY="251.0" mnemonicParsing="false" onAction="#loadproductForComboBox" text="Load Product" />
+                        <Label fx:id="promotionLabel" layoutX="306.0" layoutY="14.0" prefHeight="320.0" prefWidth="400.0" />
                      </children>
                   </AnchorPane>
                </content>

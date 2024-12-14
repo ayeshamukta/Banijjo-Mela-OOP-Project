@@ -1,11 +1,14 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cart
+public class Cart implements Serializable
 {
-    private String name,division,address,paymentOption;
-    private int phnNum;
+
+    private String name,division,address,paymentOption, pName;
+    private int phnNum,quantity;
+    private Double price;
 
     private ArrayList<Product>products;
 
@@ -55,5 +58,35 @@ public class Cart
 
     public void setProducts(ArrayList<Product> products) {
         this.products = products;
+    }
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Cart(String pName, int quantity, Double price) {
+        this.pName = pName;
+        this.quantity = quantity;
+        this.price = price;
     }
 }

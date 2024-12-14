@@ -1,5 +1,9 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
@@ -7,9 +11,13 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class CartViewController
+public class CartViewController implements Serializable
 {
     @javafx.fxml.FXML
     private Label errorAlertLabelText;
@@ -18,17 +26,9 @@ public class CartViewController
     @javafx.fxml.FXML
     private TextField cusAddressTextField;
     @javafx.fxml.FXML
-    private TableColumn<CartItem, Integer> quanTableCol;
-    @javafx.fxml.FXML
-    private static TableView<CartItem> tableviewCart;
-    @javafx.fxml.FXML
-    private TableColumn<CartItem, Double> priceTableCol;
-    @javafx.fxml.FXML
     private TextField customerNameTextField;
     @javafx.fxml.FXML
     private TabPane customerTabpane;
-    @javafx.fxml.FXML
-    private TableColumn<CartItem, String> proNameTableCol;
     @javafx.fxml.FXML
     private Label totalBillLabel;
     @javafx.fxml.FXML
@@ -43,8 +43,14 @@ public class CartViewController
     private RadioButton mobileBankingRadioBtn;
     Integer orderId = 000000;
 
+    ToggleGroup tg;
+
    public ArrayList<Product> productList;
    public static   ObservableList<CartItem> cartItem = FXCollections.observableArrayList();
+
+
+    @javafx.fxml.FXML
+    private Label cartListLabel;
 
     public void setProductList(ArrayList<Product> productList) {
         this.productList = productList;
@@ -52,17 +58,43 @@ public class CartViewController
 
 
     }
+    Double totalAmount = (double) 0;
+    StringBuilder sb = new StringBuilder("Your Items : \n");
 
 
     @javafx.fxml.FXML
     public void initialize()
     {
-//         proName;
-//    private  int proID,proQuan;
-//    private double proPrice;
-        proNameTableCol.setCellValueFactory(new PropertyValueFactory<>("proName"));
-        priceTableCol.setCellValueFactory(new PropertyValueFactory<>("proPrice"));
-        quanTableCol.setCellValueFactory(new PropertyValueFactory<>("proQuan"));
+        try
+        {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("cartList.bin"));
+            ArrayList<Cart> l= (ArrayList<Cart>) ois.readObject();
+
+
+
+            for(Cart item: l)
+            {
+                sb.append("Product name : ").append(item.getpName()).append("               ").append("Quantity : ").append(item.getQuantity()).append("                ").append("Price : ").append(item.getPrice()).append("\n");
+                totalAmount+= item.getPrice();
+            }
+
+            cartListLabel.setText(sb.toString());
+            ois.close();
+            totalBillLabel.setText(totalAmount.toString());
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        tg = new ToggleGroup();
+        mobileBankingRadioBtn.setToggleGroup(tg);
+        sslCommerzRadioBtn.setToggleGroup(tg);
+        codRadioBtn.setToggleGroup(tg);
+
+
+        cusDivisionComboBox.getItems().addAll("Dhaka","Barishal","Chattogram","Khulna","Rajshahi","Rangpur","Mymensing","Sylhet") ;
+
 
     }
 
@@ -196,29 +228,101 @@ public class CartViewController
 
     }
 
+    String payment = " ";
+
+
+
     @javafx.fxml.FXML
-    public void puchaseConfirmatoinBtn(ActionEvent actionEvent) {
-        orderId = orderId+1;
+    public void puchaseConfirmatoinBtn(ActionEvent actionEvent) throws FileNotFoundException {
+
+        if(mobileBankingRadioBtn.isSelected() || sslCommerzRadioBtn.isSelected() )
+        {
+            errorAlertLabelText.setText("Currently Mobile Banking & SSL COMMERZ Service is Unavailable");
+        }
+        else
+        {
+            if(customerNameTextField.getText().trim().isEmpty() || cusPhnNumTextField.getText().trim().isEmpty() || cusDivisionComboBox.getValue() == null || cusAddressTextField.getText().trim().isEmpty())
+            {
+
+
+                errorAlertLabelText.setText("Please Fill out All Valid Input");
+
+
+            }
+            else{
+
+                payment = "COD";
+
+                orderId = orderId+1;
+                LocalDate date = LocalDate.now();
+                LocalTime time = LocalTime.now();
+                String biillingadd ="Customer Name : " + customerNameTextField.getText() +"       Phone Number :"+  cusPhnNumTextField.getText()+"\n";
+                String shippingAdd = "Division : " + cusDivisionComboBox.getValue() +"       Address : "+  cusAddressTextField.getText()+ "       Payement Method : "+payment+ "\n";
+                StringBuilder bill = new StringBuilder("Your Bill \n");
+                bill.append(sb.toString()).append("\n").append("Total Amount :").append(totalAmount).append("          Order Id: ").append(orderId).append("\n").append("Date : ").append(date).append("    ").append("Time : ").append(time).append("\n").append(biillingadd).append("\n").append(shippingAdd);
+
+
+                PdfWriter writer = new PdfWriter("Your Bill.pdf");
+                PdfDocument pdf = new PdfDocument(writer);
+                Document document = new Document(pdf);
+                document.add(new Paragraph(bill.toString()));
+                document.close();
+                errorAlertLabelText.setText(" ");
+            }
+
+
+        }
+
 
     }
-    public static void addToCart(String proName,Integer proId, Integer proQuan, double proPrice)
+//    public static void addToCart(String proName,Integer proId, Integer proQuan, double proPrice)
+public static void addToCart(Product p, Integer q)
     {
-        CartItem newItem = new CartItem(
-                proName,
-                proId,
-                proQuan,
-                proPrice
-        );
-       for(CartItem p: cartItem)
+//        CartItem newItem = new CartItem(
+//                proName,
+//                proId,
+//                proQuan,
+//                proPrice
+//        );
+//       for(CartItem p: cartItem)
+//       {
+//          if(p.getProID() == proId)
+//          {
+//              p.setProQuan(proQuan);
+//              p.setProPrice(p.getProPrice()*p.getProQuan());
+//          }
+//
+//       }
+//        tableviewCart.setItems(cartItem);
+        String name = p.getProductName();
+        Double price = p.getProductPrice();
+        Integer quantity = q;
+
+        Double updatedPrice= price*quantity;
+
+        Cart newItem = new Cart(name,quantity,updatedPrice);
+        ArrayList<Cart> cartList = new ArrayList<>();
+
+
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("cartList.bin"))) {
+            cartList = (ArrayList<Cart>) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            // No existing cart, continue with empty list
+        }
+        cartList.add(newItem);
+
+
+
+       try
        {
-          if(p.getProID() == proId)
-          {
-              p.setProQuan(proQuan);
-              p.setProPrice(p.getProPrice()*p.getProQuan());
-          }
+           ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("cartList.bin"));
+           oos.writeObject(cartList);
+           oos.close();
+           System.out.println(cartList);
 
+       } catch (IOException e) {
+           throw new RuntimeException(e);
        }
-        tableviewCart.setItems(cartItem);
-
     }
 }

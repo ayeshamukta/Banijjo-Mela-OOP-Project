@@ -32,8 +32,20 @@ public class LoginViewController
     public void loginButtonOnAction(ActionEvent actionEvent)
     {
         String group = groupComboBoxField.getValue();
+        String userName = userNameTextField.getText();
+        Integer pass = Integer.parseInt(passwordTextField.getText());
 
-        if(group.equals("Customer"))
+    if(groupComboBoxField.getValue().isEmpty() ||
+            userNameTextField.getText().isEmpty()||
+            passwordTextField.getText() == null||
+            (!userName.matches("[a-zA-Z]*")) )
+
+    {
+        errorLabelingField.setText("Please enter valid Input");
+    }
+    else
+    {
+        if(group.equals("Customer") && userName.equals("ayesha") && pass.equals(1234))
         {
             try
             {
@@ -50,7 +62,7 @@ public class LoginViewController
             }
 
         }
-        else if (group.equals("Stall Owner"))
+        else if (group.equals("Stall Owner") && userName.equals("ayesha") && pass.equals(1234))
         {
             try
             {
@@ -69,8 +81,13 @@ public class LoginViewController
 
 
         }
-
+        else
+        {
+            errorLabelingField.setText("Not a valid User");
+        }
 
     }
 
+    }
+//
 }

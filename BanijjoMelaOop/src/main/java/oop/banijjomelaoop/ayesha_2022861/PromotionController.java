@@ -19,29 +19,69 @@ public class PromotionController implements Serializable {
     @javafx.fxml.FXML
     private TabPane stallownerTab;
     @javafx.fxml.FXML
-    private TableColumn<Promotion, String> codeColoumnForPromotion;
-    @javafx.fxml.FXML
-    private TableView<Promotion> promotionTableView;
-    @javafx.fxml.FXML
     private Tab promotionTab;
     @javafx.fxml.FXML
-    private TableColumn<Promotion, Integer> percentageColoumnForPromotion;
-
-    @javafx.fxml.FXML
-    private TableColumn<Promotion, Integer> productIdColoumnForPromotion;
+    private Label promotionLabel;
 
     ObservableList<Promotion> promos = FXCollections.observableArrayList();
+
 
     String pIdLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\id.bin";
     File f = new File(pIdLocation);
 
+    String fileLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\oop\\banijjomelaoop\\promotionInfo.bin";
+    File promoFile = new File (fileLocation);
+
+
+
     public void initialize()
     {
+// For Combo box products
+        if(f.exists())
+        {
+            try {
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pIdLocation));
 
-//        productIdColoumnForPromotion.setCellValueFactory(cellData -> cellData.getValue().productNameProperty());
-        productIdColoumnForPromotion.setCellValueFactory(new PropertyValueFactory<>("id"));
-        codeColoumnForPromotion.setCellValueFactory(new PropertyValueFactory<>("code"));
-        percentageColoumnForPromotion.setCellValueFactory(new PropertyValueFactory<>("disscount"));
+                String id = (String) ois.readObject();
+                ois.close();
+                Integer prodictID = Integer.valueOf(id);
+                prouctsComboBoxForPromotion.getItems().add(prodictID);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+        else
+        {
+            System.out.println("Can't write the file");
+        }
+
+        if (promoFile.exists()) {
+            try {
+                if (promoFile.length() > 0) {
+                    ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileLocation));
+                    ArrayList<Promotion> promosFromFile = (ArrayList<Promotion>) ois.readObject();
+                    ObservableList<Promotion> promotions = FXCollections.observableArrayList(promosFromFile);
+                    System.out.println(promotions);
+
+                    StringBuilder sb = new StringBuilder("Promos \n");
+                    for (Promotion p : promotions) {
+                        sb.append(p.toString());
+                    }
+
+                    promotionLabel.setText(sb.toString());
+                    ois.close();
+                } else {
+                    promos.clear();
+                }
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
 
@@ -175,89 +215,48 @@ public class PromotionController implements Serializable {
     }
 
 
-    @javafx.fxml.FXML
-    public void updateButtonOnActionForPromotion(ActionEvent actionEvent) {
-        Integer id= prouctsComboBoxForPromotion.getValue();
-        Integer dis = Integer.parseInt(disscountTextFieldForPromotion.getText());
-        String disCode = promoCodeForPromotion.getText();
-//        int id, int disscount, String code
-        Promotion newPromotion = new Promotion(id,dis,disCode);
-        promos.add(newPromotion);
+@javafx.fxml.FXML
+public void updateButtonOnActionForPromotion(ActionEvent actionEvent) {
+    Integer id = prouctsComboBoxForPromotion.getValue();
+    Integer dis = Integer.parseInt(disscountTextFieldForPromotion.getText());
+    String disCode = promoCodeForPromotion.getText();
 
 
-        String fileLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\oop\\banijjomelaoop\\promotionInfo.bin";
-        File promoFile = new File (fileLocation);
+    Promotion newPromotion = new Promotion(id, dis, disCode);
+    promos.add(newPromotion);
 
-        if(promoFile.exists())
-        {
-            try {
 
-                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileLocation,true));
-                oos.writeObject(new ArrayList<> (promos) );
+    String fileLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\oop\\banijjomelaoop\\promotionInfo.bin";
+    File promoFile = new File(fileLocation);
 
-                oos.close();
+    if (promoFile.exists()) {
+        try {
 
-            } catch (RuntimeException e) {
-
-                throw new RuntimeException(e);
-            } catch (FileNotFoundException e) {
-                System.out.println("File Not Found");
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                System.out.println("Error");
-                throw new RuntimeException(e);
-            }
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileLocation));
+            oos.writeObject(new ArrayList<>(promos));
+            oos.close();
+        } catch (IOException e) {
+            System.out.println("can't write");
+            throw new RuntimeException(e);
         }
-
-        if(promoFile.exists())
-        {
-            try
-            {
-                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileLocation));
-
-                ArrayList<Promotion> promosFromFile = (ArrayList<Promotion>) ois.readObject();
-                promos.addAll(promosFromFile);
-
-                promotionTableView.setItems(promos);
-                ois.close();
-
-
-
-
-            } catch (IOException e) {
-                System.out.println("Can't read");
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                System.out.println("Can't read");
-                throw new RuntimeException(e);
-            }
-        }
-
+    } else {
+        System.out.println("File does not exist.");
     }
 
-    @javafx.fxml.FXML
-    public void loadproductForComboBox(ActionEvent actionEvent) {
-        if(f.exists())
-        {
-            try {
-                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pIdLocation));
 
-                String id = (String) ois.readObject();
-                ois.close();
-                Integer prodictID = Integer.valueOf(id);
-                prouctsComboBoxForPromotion.getItems().add(prodictID);
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
-        else
-        {
-            System.out.println("Can't write the file");
-        }
-
+    StringBuilder sb = new StringBuilder("Promos \n");
+    for (Promotion p : promos) {
+        sb.append(p.toString()).append("\n");
     }
+
+
+    promotionLabel.setText(sb.toString());
+    System.out.println(promos);
+
 }
+
+
+
+
+}
+

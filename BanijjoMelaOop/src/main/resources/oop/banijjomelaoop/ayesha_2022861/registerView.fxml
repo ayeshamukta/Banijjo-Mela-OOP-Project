@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="1166.0" style="-fx-background-color: #F0F8FF;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.ayesha_2022861.RegisterController">
    <children>
-      <TabPane fx:id="stallownerTab" layoutX="238.0" layoutY="67.0" prefHeight="374.0" prefWidth="953.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="stallownerTab" layoutX="238.0" layoutY="67.0" prefHeight="374.0" prefWidth="1008.0" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab fx:id="registerTab" text="Register">
                <content>
@@ -60,7 +60,7 @@
       </TabPane>
       <AnchorPane layoutX="231.0" prefHeight="54.0" prefWidth="648.0">
          <children>
-            <Label alignment="CENTER" layoutY="-1.0" prefHeight="58.0" prefWidth="963.0" style="-fx-background-color: #2F4F4F;" text="Register Stall" textFill="WHITE">
+            <Label alignment="CENTER" layoutY="-1.0" prefHeight="58.0" prefWidth="1016.0" style="-fx-background-color: #2F4F4F;" text="Register Stall" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

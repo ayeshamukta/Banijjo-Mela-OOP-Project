@@ -63,7 +63,7 @@ public class ProductViewController
 
         //Name label
         Label name = new Label("Name : "+ p.getProductName());
-//        Price Label
+
 
         //        spinner
         Spinner<Integer> spinner = new Spinner<>();
@@ -72,10 +72,11 @@ public class ProductViewController
         spinner.setLayoutX(50);
         spinner.setPrefWidth(120);
 
-        Label price = new Label(String.format("Price : " + String.valueOf(p.getProductPrice())));
+        Label price = new Label(String.format("Price : " + p.getProductPrice()));
 //        button add to cart
         Button btn = new Button("Add to Cart");
-        btn.setOnAction(actionEvent -> CartViewController.addToCart(p.getProductName(),p.getProductID(),spinner.getValue(), p.getProductPrice()));
+//        btn.setOnAction(actionEvent -> CartViewController.addToCart(p.getProductName(),p.getProductID(),spinner.getValue(), p.getProductPrice()));
+        btn.setOnAction(actionEvent -> CartViewController.addToCart(p, spinner.getValue()));
 
 
 // button wishlist

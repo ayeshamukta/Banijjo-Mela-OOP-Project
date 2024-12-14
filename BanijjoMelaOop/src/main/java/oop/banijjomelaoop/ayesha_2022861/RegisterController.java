@@ -151,7 +151,7 @@ public class RegisterController {
             ArrayList<Stall> loadStall = (ArrayList<Stall>) ois.readObject();
             registerdShop.setAll(loadStall);
 
-            StringBuilder sb = new StringBuilder("Registerd Stall:\n");
+            StringBuilder sb = new StringBuilder("Registerd Stall:\n\n");
             for (Stall s : loadStall) {
                 sb.append(s.toString()).append("\n");
             }
