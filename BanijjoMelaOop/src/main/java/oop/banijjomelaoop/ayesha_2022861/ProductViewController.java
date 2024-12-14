@@ -81,7 +81,7 @@ public class ProductViewController
 
 // button wishlist
         Button wishlistBtn = new Button("Wish List");
-        wishlistBtn.setOnAction(actionEvent -> WishlistViewController.loadWishList(p.getProductName(),p.getProductPrice(),p.getProductID()));
+        wishlistBtn.setOnAction(actionEvent -> WishlistViewController.loadWishList(p));
 
 
 

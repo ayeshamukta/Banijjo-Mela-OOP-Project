@@ -263,16 +263,7 @@ public class ManageProductsController implements Serializable {
         oos.writeObject(productList);
         oos.close();
 
-//        System.out.println(productList);
-
-
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/cartView.fxml"));
-//        CartViewController controller = loader.getController();
-//        controller.setProductList(productList);
-
-//        FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/oop/banijjomelaoop/ayesha_2022861/Promotion.fxml"));
-//        Parent root = loader1.load();
-//        PromotionController pc = loader1.getController();
+//
 
         String pIdLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\id.bin";
         File f = new File(pIdLocation);

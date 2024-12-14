@@ -3,6 +3,7 @@ package oop.banijjomelaoop.ayesha_2022861;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
@@ -17,37 +18,34 @@ public class WishlistViewController
     @javafx.fxml.FXML
     private Tab wishlistTab;
     @javafx.fxml.FXML
-    private ScrollPane wishlistScrollPane;
-
-    @javafx.fxml.FXML
-    private VBox wishlistVBox;
+    private Label wishlistlabel;
 
 
     @javafx.fxml.FXML
     public void initialize() {
         String fileLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\oop\\banijjomelaoop\\ayesha_2022861\\wishList.bin";
         File f = new File(fileLocation);
-
-        if (f.exists() && f.length() > 0) {
-            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
-                // Read the entire list of WishList objects
-                ArrayList<WishList> wishListArrayList = (ArrayList<WishList>) ois.readObject();
-
-                // Clear the VBox and add all wishlist items
-                wishlistVBox.getChildren().clear();
-                for (WishList wish : wishListArrayList) {
-                    // Create a Label to display each wishlist item
-                    Label wishLabel = new Label("Name: " + wish.getProductName() + " | Price: " + wish.getProductPrice());
-                    // Add the label to the VBox
-                    wishlistVBox.getChildren().add(wishLabel);
+//
+        if (f.exists())
+        {
+            try {
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileLocation));
+                ArrayList<WishList> list  =(ArrayList<WishList>) ois.readObject();
+//                ObservableList<WishList> wish = FXCollections.observableArrayList();
+//                wish.addAll(list);
+//                System.out.println(list);
+                StringBuilder sb = new StringBuilder("Wish List \n");
+                for(WishList w : list)
+                {
+                    sb.append("Product Name : ").append(w.getProductName()).append("            Price : ").append(w.getProductPrice()).append("\n");
                 }
-            } catch (IOException | ClassNotFoundException e) {
-                System.out.println("Failed to load wishlist: " + e.getMessage());
-                e.printStackTrace(); // Handle exception during reading
+                wishlistlabel.setText(sb.toString());
+                ois.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-        } else {
-            System.out.println("Wishlist file does not exist or is empty.");
         }
+
     }
 
 
@@ -178,54 +176,55 @@ public class WishlistViewController
 
         }
     }
-//    public static void loadWishList(String name, Double price, int id) {
-//        ArrayList<WishList> wishListArrayList = new ArrayList<>();
-//        WishList newWishList = new WishList(name, price, id);
-//        wishListArrayList.add(newWishList);
 //
-//        String fileLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\oop\\banijjomelaoop\\ayesha_2022861\\wishList.bin";
-//        File f = new File(fileLocation);
-//
-//        // Declare oos without final keyword
-//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileLocation, true))) {
-//            // If file exists and has data, use append mode.
-//            if (f.exists() && f.length() > 0) {
-//                oos.writeObject(newWishList);
-//            } else {
-//                // If file is new, write the object and create the file.
-//                oos.writeObject(newWishList);
-//            }
-//        } catch (IOException e) {
-//            throw new RuntimeException("Failed to write to file", e);
-//        }
 
-    public static void loadWishList(String name, Double price, int id) {
-        // Create a new WishList object
-        WishList newWishList = new WishList(name, price, id);
-        ArrayList<WishList> wishListArrayList = new ArrayList<>();
+    public static void loadWishList(Product p) {
+
+
+
 
         String fileLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\oop\\banijjomelaoop\\ayesha_2022861\\wishList.bin";
         File f = new File(fileLocation);
 
-        // If the file already exists and contains items, load them first
-        if (f.exists() && f.length() > 0) {
-            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f))) {
-                // Read the entire ArrayList<WishList> from the file
-                wishListArrayList = (ArrayList<WishList>) ois.readObject();
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace(); // Handle exception during reading
+
+
+        ArrayList<WishList> wishList = new ArrayList<>();
+        String pName = p.getProductName();
+        Double pPrice = p.getProductPrice();
+        int pId = p.getProductID();
+        WishList newWishItem = new WishList(pName,pPrice,pId);
+
+
+        if (f.exists())
+        {
+            try {
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileLocation));
+                wishList  =(ArrayList<WishList>) ois.readObject();
+                System.out.println(wishList);
+                ois.close();
+            } catch (Exception e) {
+                wishList = new ArrayList<>();
+                throw new RuntimeException(e);
+            }
+        wishList.add(newWishItem);
+
+        if(f.exists())
+        {
+            try {
+                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileLocation));
+                oos.writeObject(wishList);
+                oos.close();
+//                System.out.println(wishList);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         }
 
-        // Add the new item to the list
-        wishListArrayList.add(newWishList);
 
-        // Save the updated list back to the file
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileLocation))) {
-            oos.writeObject(wishListArrayList); // Write the entire list to the file
-        } catch (IOException e) {
-            throw new RuntimeException("Failed to write to file", e); // Handle exception during writing
         }
+
+
+
     }
 
 
