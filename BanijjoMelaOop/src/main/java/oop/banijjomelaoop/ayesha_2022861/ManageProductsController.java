@@ -21,6 +21,7 @@ import java.io.*;
 import java.security.cert.Extension;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ManageProductsController implements Serializable {
     @javafx.fxml.FXML
@@ -253,17 +254,18 @@ public class ManageProductsController implements Serializable {
         productList.add(newProduct);
         Product proList = new Product(imgPath, productNameTextField.getText(), Double.parseDouble(priceTextFieldForManageProduct.getText()), Integer.parseInt(quanityTextFieldForManageProducts.getText()));
         ProductData.addProduct(proList);
-        ObservableList<Product> productTable = FXCollections.observableArrayList(newProduct);
+//        ObservableList<Product> productTable = FXCollections.observableArrayList(newProduct);
+//        productsTableView.setItems(productTable);
+//        ProductData.loadTableData();
+        List<Product> list = ProductData.loadTableData();
+        ObservableList<Product> productTable = FXCollections.observableArrayList(list);
         productsTableView.setItems(productTable);
-        ProductData.loadTableData();
-
 
         FileOutputStream fos = new FileOutputStream("ProductInfo.bin");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(productList);
         oos.close();
 
-//
 
         String pIdLocation = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\id.bin";
         File f = new File(pIdLocation);

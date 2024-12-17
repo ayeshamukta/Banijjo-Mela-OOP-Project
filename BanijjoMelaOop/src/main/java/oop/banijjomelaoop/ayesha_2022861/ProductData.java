@@ -14,7 +14,7 @@ public class ProductData
 
     static
     {
-        loadProducts();
+         loadProducts();
 
 
     }
@@ -60,19 +60,22 @@ public class ProductData
    }
 
 //    table view save data
-    public static void loadTableData()
+    public static List<Product> loadTableData()
+//    public static void loadTableData()
 
     {
         try
         {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(dataFile));
             List<Product> proList = (List<Product>) ois.readObject();
+            return proList;
 //            return FXCollections.observableArrayList(proList);
         }
         catch (IOException | ClassNotFoundException e)
         {
             e.printStackTrace();
         }
+        return new ArrayList<>();
     }
 
 }

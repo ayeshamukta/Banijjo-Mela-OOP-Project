@@ -43,6 +43,7 @@ public class PromotionController implements Serializable {
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pIdLocation));
 
                 String id = (String) ois.readObject();
+
                 ois.close();
                 Integer prodictID = Integer.valueOf(id);
                 prouctsComboBoxForPromotion.getItems().add(prodictID);

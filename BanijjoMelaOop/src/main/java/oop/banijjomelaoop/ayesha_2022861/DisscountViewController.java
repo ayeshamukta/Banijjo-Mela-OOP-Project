@@ -1,8 +1,15 @@
 package oop.banijjomelaoop.ayesha_2022861;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class DisscountViewController
 {
@@ -10,9 +17,63 @@ public class DisscountViewController
     private Tab disscountTab;
     @javafx.fxml.FXML
     private TabPane customerTabpane;
+    @javafx.fxml.FXML
+    private Label cuponView;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        String fileLoaction = "E:\\Storage\\Banijjo-Mela-OOP-Project\\BanijjoMelaOop\\src\\main\\resources\\oop\\banijjomelaoop\\promotionInfo.bin";
+        File f = new File(fileLoaction);
+
+        String productInfo = "E:\\Storage\\Banijjo-Mela-OOP-Project\\ProductInfo.bin";
+        File productFile = new File(productInfo);
+
+        if(f.exists())
+        {
+            try {
+
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileLoaction));
+                ArrayList<Promotion> promo = (ArrayList<Promotion>) ois.readObject();
+                StringBuilder sb = new StringBuilder("Your Promos\n");
+
+                ObjectInputStream ois2 = new ObjectInputStream(new FileInputStream(productInfo));
+                ArrayList<Product> product = (ArrayList<Product>) ois2.readObject();
+
+
+
+                for(Promotion p: promo)
+                {
+                    String proName = " ";
+                    for(Product pro : product)
+                    {
+                        if(p.getId() == pro.getProductID())
+                        {
+                            proName  = pro.getProductName();
+                            sb.append("Product Name : ").append(proName).append("                       Disscounted Amount : ").append(p.getDisscount()).append("%").append( "           Promo Code : ").append(p.getCode()).append("\n");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+
+
+
+                }
+                cuponView.setText(sb.toString());
+                ois.close();
+
+
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        else
+        {
+            System.out.println("File Doesn't exist");
+        }
     }
 
     @javafx.fxml.FXML

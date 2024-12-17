@@ -234,6 +234,9 @@ public class CartViewController implements Serializable
 
     @javafx.fxml.FXML
     public void puchaseConfirmatoinBtn(ActionEvent actionEvent) throws FileNotFoundException {
+        orderId = orderId+1;
+        LocalDate date = LocalDate.now();
+        LocalTime time = LocalTime.now();
 
         if(mobileBankingRadioBtn.isSelected() || sslCommerzRadioBtn.isSelected() )
         {
@@ -253,9 +256,8 @@ public class CartViewController implements Serializable
 
                 payment = "COD";
 
-                orderId = orderId+1;
-                LocalDate date = LocalDate.now();
-                LocalTime time = LocalTime.now();
+
+
                 String biillingadd ="Customer Name : " + customerNameTextField.getText() +"       Phone Number :"+  cusPhnNumTextField.getText()+"\n";
                 String shippingAdd = "Division : " + cusDivisionComboBox.getValue() +"       Address : "+  cusAddressTextField.getText()+ "       Payement Method : "+payment+ "\n";
                 StringBuilder bill = new StringBuilder("Your Bill \n");
@@ -273,9 +275,13 @@ public class CartViewController implements Serializable
 
         }
 
+//        ArrayList<Cart> orderInfo = new ArrayList<>();
+
+
+
 
     }
-//    public static void addToCart(String proName,Integer proId, Integer proQuan, double proPrice)
+
 public static void addToCart(Product p, Integer q)
     {
 //        CartItem newItem = new CartItem(
