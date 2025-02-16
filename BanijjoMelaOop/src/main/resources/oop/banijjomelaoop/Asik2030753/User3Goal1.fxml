@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="481.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.Asik2030753.User3Goal1">
+   <children>
+      <TextField fx:id="stallOwnerNameTextField" layoutX="366.0" layoutY="25.0" />
+      <TextField fx:id="idTextField" layoutX="366.0" layoutY="74.0" />
+      <RadioButton fx:id="reportNewIssueradioButton" layoutX="23.0" layoutY="29.0" mnemonicParsing="false" text="Report new Issue " />
+      <RadioButton fx:id="checkIssueStatusRadioButton" layoutX="23.0" layoutY="69.0" mnemonicParsing="false" text="Check Issue status" />
+      <Label layoutX="259.0" layoutY="29.0" text="Stall owner name:" />
+      <Label layoutX="324.0" layoutY="82.0" text="Id:" />
+      <Label layoutX="23.0" layoutY="139.0" prefHeight="18.0" prefWidth="69.0" text="Description:" />
+      <TextArea fx:id="descriptionTextArea" layoutX="114.0" layoutY="118.0" prefHeight="56.0" prefWidth="474.0" />
+      <Button fx:id="submitButtonOnClick" layoutX="259.0" layoutY="201.0" mnemonicParsing="false" text="Submit" />
+      <TableView fx:id="stallTableView" layoutX="13.0" layoutY="261.0" prefHeight="200.0" prefWidth="569.0">
+        <columns>
+          <TableColumn fx:id="stallOwnerNametableCol" prefWidth="117.60003662109375" text="Stall Owner name " />
+          <TableColumn fx:id="idtableTableCol" prefWidth="119.20001220703125" text="Id" />
+            <TableColumn fx:id="descriptionTableCol" prefWidth="150.39996337890625" text="Description " />
+            <TableColumn fx:id="statusTableCol" prefWidth="150.39996337890625" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
