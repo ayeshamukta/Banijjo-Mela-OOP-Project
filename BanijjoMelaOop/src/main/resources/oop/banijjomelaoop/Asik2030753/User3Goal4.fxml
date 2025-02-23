@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="499.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.Asik2030753.User3Goal4">
+   <children>
+      <TextField fx:id="addUpdateProListingTextField" layoutX="160.0" layoutY="32.0" />
+      <TextField fx:id="pricingIssueTextField" layoutX="474.0" layoutY="32.0" />
+      <TextField fx:id="productNameTextField" layoutX="101.0" layoutY="86.0" />
+      <TextField fx:id="productIdTextField" layoutX="465.0" layoutY="86.0" />
+      <Text layoutX="3.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add/update Product Listing:" />
+      <Text layoutX="14.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product name:" />
+      <Text layoutX="399.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pricing Issue" />
+      <Text layoutX="388.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Id:" />
+      <TextArea fx:id="descriptionTextArea" layoutX="81.0" layoutY="134.0" prefHeight="48.0" prefWidth="604.0" />
+      <Text layoutX="14.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" />
+      <Text layoutX="45.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
+      <TextField fx:id="priceTextField" layoutX="77.0" layoutY="195.0" />
+      <Button fx:id="submitButtonOnClick" layoutX="235.0" layoutY="228.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="150.0" text="Submit" />
+      <TableView fx:id="user3Goal4TableView" layoutX="7.0" layoutY="292.0" prefHeight="200.0" prefWidth="726.0">
+        <columns>
+          <TableColumn fx:id="addProductListingTableCol" prefWidth="122.4000186920166" text="ADD Product Listing" />
+          <TableColumn fx:id="nameTableCol" prefWidth="97.60000610351562" text="Name" />
+            <TableColumn fx:id="idTableCol" prefWidth="118.4000244140625" text="ID" />
+            <TableColumn fx:id="descriptionTableCol" prefWidth="118.4000244140625" text="Description" />
+            <TableColumn fx:id="priceTableCol" prefWidth="118.4000244140625" text="Price" />
+            <TableColumn fx:id="fixingPriceIssueTableCol" prefWidth="147.99997558593748" text="Fixing Price Issue" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

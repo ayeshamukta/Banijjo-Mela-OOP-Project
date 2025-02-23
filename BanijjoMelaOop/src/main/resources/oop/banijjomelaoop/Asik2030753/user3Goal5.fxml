@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.Asik2030753.User3Goal5">
+   <children>
+      <TextField fx:id="productNameTextField" layoutX="119.0" layoutY="26.0" />
+      <TextField fx:id="productDescriptionTextField" layoutX="119.0" layoutY="84.0" prefHeight="63.0" prefWidth="457.0" />
+      <TextField fx:id="productTagsTextField" layoutX="382.0" layoutY="26.0" />
+      <Text layoutX="29.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name:" wrappingWidth="96.00002441406241" />
+      <Text layoutX="14.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Description::" wrappingWidth="96.00002441406241" />
+      <Text layoutX="293.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Tags:" wrappingWidth="88.80001220703116" />
+      <Button layoutX="221.0" layoutY="157.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="34.0" prefWidth="136.0" text="Submit" />
+      <TableView fx:id="ProductTableView" layoutX="16.0" layoutY="218.0" prefHeight="168.0" prefWidth="571.0">
+        <columns>
+          <TableColumn fx:id="productNameTablecol" prefWidth="107.20001220703125" text="Product Name" />
+          <TableColumn fx:id="productTagsTableCol" prefWidth="118.4000244140625" text="Product Tags" />
+            <TableColumn fx:id="productDescriptionTableCol" prefWidth="344.79998779296875" text="Product Description" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
