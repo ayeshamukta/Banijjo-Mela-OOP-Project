@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.Asik2030753.User3Goal7">
+   <children>
+      <TextField fx:id="deliveryLocationTYextField" layoutX="111.0" layoutY="30.0" />
+      <TextField fx:id="logisticsNamerTextField" layoutX="111.0" layoutY="79.0" />
+      <TextField fx:id="travelTimeTextField" layoutX="401.0" layoutY="30.0" />
+      <ComboBox fx:id="logisticsSupportComboBox" layoutX="400.0" layoutY="79.0" prefWidth="150.0" />
+      <Text layoutX="20.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery locations" wrappingWidth="83.66363525390625" />
+      <Text layoutX="20.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logistics name " wrappingWidth="83.66363525390625" />
+      <Text layoutX="330.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" travel time:" wrappingWidth="70.86358642578125" />
+      <Text layoutX="322.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logistics support: " wrappingWidth="70.86358642578125" />
+      <Button layoutX="215.0" layoutY="124.0" mnemonicParsing="false" onAction="#showButtonOnOnClick" prefHeight="34.0" prefWidth="90.0" text="Show" />
+      <TableView fx:id="user3Goal7TableView" layoutX="23.0" layoutY="177.0" prefHeight="200.0" prefWidth="558.0">
+        <columns>
+          <TableColumn fx:id="deliveryLocationTableCol" prefWidth="123.20001220703125" text="Delivery locations" />
+          <TableColumn fx:id="logisticsNameTableCol" prefWidth="112.0" text="Logistics name " />
+            <TableColumn fx:id="travelTimeTableCol" prefWidth="112.0" text=" travel time" />
+            <TableColumn fx:id="logisticsSupportTableCol" prefWidth="209.60001220703123" text="Logistics support" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
