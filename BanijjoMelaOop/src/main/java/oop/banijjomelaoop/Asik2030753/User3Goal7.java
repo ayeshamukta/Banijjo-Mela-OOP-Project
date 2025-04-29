@@ -1,5 +1,12 @@
 package oop.banijjomelaoop.Asik2030753;
 
+import javafx.scene.control.ComboBox;
+
+import javax.swing.table.TableColumn;
+import javax.swing.text.TableView;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
 public class User3Goal7
 {
     @javafx.fxml.FXML

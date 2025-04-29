@@ -1,5 +1,10 @@
 package oop.banijjomelaoop.Asik2030753;
 
+import javax.swing.table.TableColumn;
+import javax.swing.text.TableView;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
 public class User3Goal5
 {
     @javafx.fxml.FXML

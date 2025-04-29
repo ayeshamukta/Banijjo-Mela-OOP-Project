@@ -1,5 +1,9 @@
 package oop.banijjomelaoop.Asik2030753;
 
+import javafx.scene.control.ComboBox;
+
+import java.awt.*;
+
 public class User3Goal6
 {
     @javafx.fxml.FXML
