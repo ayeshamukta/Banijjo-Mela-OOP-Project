@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.BottomNavigation?>
+<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.banijjomelaoop.Mobin_1830071.MarketingAndPromotions">
+   <children>
+      <Label layoutX="25.0" layoutY="32.0" text="Name" />
+      <TextField layoutX="71.0" layoutY="28.0" />
+      <Label layoutX="27.0" layoutY="87.0" text="Promotions" />
+      <BottomNavigation layoutX="89.0" layoutY="92.0" />
+      <BottomNavigation layoutX="89.0" layoutY="83.0">
+          <actionItems>
+              <BottomNavigationButton selected="true" text="Recent">
+                  <graphic>
+                      <Icon content="RECENT_ACTORS" />
+                  </graphic>
+              </BottomNavigationButton>
+              <BottomNavigationButton text="Favourite">
+                  <graphic>
+                      <Icon content="FAVORITE" />
+                  </graphic>
+              </BottomNavigationButton>
+              <BottomNavigationButton text="Nearby">
+                  <graphic>
+                      <Icon content="NEAR_ME" />
+                  </graphic>
+              </BottomNavigationButton>
+          </actionItems>
+      </BottomNavigation>
+      <ButtonBar layoutX="-21.0" layoutY="128.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" text="Creat Campaign" />
+        </buttons>
+      </ButtonBar>
+      <Label layoutX="27.0" layoutY="168.0" text="Grid View" />
+      <TableView layoutX="25.0" layoutY="185.0" prefHeight="200.0" prefWidth="550.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Campaign Name " />
+          <TableColumn prefWidth="75.0" text="Type " />
+            <TableColumn prefWidth="75.0" text="Platfrom" />
+            <TableColumn prefWidth="75.0" text="Status" />
+            <TableColumn prefWidth="75.0" text="Start Date" />
+            <TableColumn prefWidth="75.0" text="End Date" />
+            <TableColumn prefWidth="75.0" text="Action" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
